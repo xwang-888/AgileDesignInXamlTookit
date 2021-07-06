@@ -9,10 +9,15 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Grid Background="{StaticResource AgileDesignBackground}">
+    <Grid>
+        <Button
+            Width="100"
+            Height="20"
+            Content="test" />
         <Button
             Width="100"
             Height="30"
+            Margin="240,0,-240,0"
             Background="{DynamicResource PrimaryHueMidBrush}"
             Click="ButtonBase_OnClick" />
         <Button

@@ -7,8 +7,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/AgileDesignColors.Wpf;component/Themes/Recommended/Primary/AgileDesignColor.Volcano.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/AgileDesignColors.Wpf;component/Themes/Recommended/State/AgileDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/AgileDesignColors.Wpf;component/Themes/Recommended/Primary/AgileDesignColor.DaybreakBlue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/AgileDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
