@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net461</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Remove="Themes\Colors\AgileDesignColor.DustRed.Primary.xaml" />
+    <Page Remove="Themes\Colors\AgileDesignColor.SunriseYellow.Primary.xaml" />
+    <Page Remove="Themes\Recommended\AgileDesignColor.DustRed.xaml" />
+    <Page Remove="Themes\Recommended\AgileDesignColor.SunriseYellow.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Themes\Colors\AgileDesignColor.DustRed.Primary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Include="Themes\Colors\AgileDesignColor.SunriseYellow.Primary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Include="Themes\Recommended\AgileDesignColor.DustRed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Include="Themes\Recommended\AgileDesignColor.SunriseYellow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\Recommended\AgileDesignColor.Lime.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Recommended\AgileDesignColor.SunsetOrange.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Recommended\AgileDesignColor.Volcano.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Recommended\AguleDesignColor.CalendulaGold.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

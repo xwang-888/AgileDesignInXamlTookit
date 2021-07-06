@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/AgileDesignColors.Wpf;component/Themes/Colors/AguleDesignColor.CalendulaGold.Primary.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource Primary3}" po:Freeze="True" />
+    <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="{StaticResource Primary3Foreground}" po:Freeze="True" />
+    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{StaticResource Primary5}" po:Freeze="True" />
+    <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="{StaticResource Primary5Foreground}" po:Freeze="True" />
+    <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="{StaticResource Primary7}" po:Freeze="True" />
+    <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="{StaticResource Primary7Foreground}" po:Freeze="True" />
+</ResourceDictionary>
