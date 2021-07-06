@@ -1,9 +1,15 @@
-﻿<Application x:Class="AgileDesign.WpfDemo.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:AgileDesign.WpfDemo"
-             StartupUri="MainWindow.xaml">
+﻿<Application
+    x:Class="AgileDesign.WpfDemo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:AgileDesign.WpfDemo"
+    StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AgileDesignColors.Wpf;component/Themes/Recommended/Primary/AgileDesignColor.Volcano.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/AgileDesignColors.Wpf;component/Themes/Recommended/State/AgileDesignTheme.Light.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -121,5 +121,15 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgileDesignColors.Wpf\AgileDesignColors.Wpf.csproj">
+      <Project>{4ddb5364-7cca-4717-bbd0-e8df1f52ad6b}</Project>
+      <Name>AgileDesignColors.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgileDesignThemes.Wpf\AgileDesignThemes.Wpf.csproj">
+      <Project>{8332fe04-d3b3-43bf-9b6c-fbbaa4849f87}</Project>
+      <Name>AgileDesignThemes.Wpf</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

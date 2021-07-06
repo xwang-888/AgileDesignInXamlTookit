@@ -1,12 +1,25 @@
-﻿<Window x:Class="AgileDesign.WpfDemo.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AgileDesign.WpfDemo"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+﻿<Window
+    x:Class="AgileDesign.WpfDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AgileDesign.WpfDemo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid Background="{StaticResource AgileDesignBackground}">
+        <Button
+            Width="100"
+            Height="30"
+            Background="{DynamicResource PrimaryHueMidBrush}"
+            Click="ButtonBase_OnClick" />
+        <Button
+            Width="100"
+            Height="30"
+            Margin="120,0,-120,0"
+            Background="{DynamicResource PrimaryHueMidBrush}"
+            Click="ButtonBase_OnClick2" />
     </Grid>
 </Window>
