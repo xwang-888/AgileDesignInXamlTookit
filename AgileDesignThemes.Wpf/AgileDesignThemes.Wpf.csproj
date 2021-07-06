@@ -8,5 +8,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
-
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
 </Project>
