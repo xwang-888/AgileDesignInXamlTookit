@@ -15,7 +15,7 @@
         <Button
             Width="100"
             Height="30"
-            Background="{DynamicResource PrimaryHueMidBrush}"
+            Background="Red"
             Click="ButtonBase_OnClick" />
 
         <Button
@@ -23,7 +23,10 @@
             Height="30"
             Background="{DynamicResource PrimaryHueMidBrush}"
             Click="ButtonBase_OnClick2" />
-        <wpf:Avatar Margin="6" Background="{x:Null}">
+        <wpf:Avatar
+            Margin="6"
+            AvatarEffect="{x:Null}"
+            Background="{x:Null}">
             <wpf:Avatar.ICon>
                 <ImageBrush ImageSource="屏幕截图 2021-06-09 092350.png" />
             </wpf:Avatar.ICon>
@@ -33,7 +36,11 @@
         <wpf:PackIcon
             Width="30"
             Height="30"
-            Foreground="{StaticResource PrimaryHueMidBrush}"
+            Foreground="{DynamicResource PrimaryHueMidBrush}"
             Kind="About" />
+        <wpf:Avatar Data="{wpf:PackIconDataMarkup FaceCry}" />
+        <Grid>
+            <Grid Grid.Row="1" />
+        </Grid>
     </WrapPanel>
 </Window>

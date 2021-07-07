@@ -9,9 +9,9 @@ namespace AgileDesignThemes.Wpf
 {
     public class PackIcon : Control
     {
-        private static readonly Lazy<IDictionary<PackIconKind, string>> _dataIndex
+        internal static readonly Lazy<IDictionary<PackIconKind, string>> _dataIndex
             = new Lazy<IDictionary<PackIconKind, string>>(PackIconDataFactory.Create);
-
+        
         static PackIcon()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PackIcon), new FrameworkPropertyMetadata(typeof(PackIcon)));
