@@ -38,9 +38,6 @@
             Height="30"
             Foreground="{DynamicResource PrimaryHueMidBrush}"
             Kind="About" />
-        <wpf:Avatar Data="{wpf:PackIconDataMarkup FaceCry}" />
-        <Grid>
-            <Grid Grid.Row="1" />
-        </Grid>
+        <wpf:Avatar Data="{wpf:PackIconDataMarkup PackIconKind=AbTesting}" />
     </WrapPanel>
 </Window>
