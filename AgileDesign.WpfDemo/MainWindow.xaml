@@ -13,6 +13,7 @@
     mc:Ignorable="d">
     <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <Button  
+            Click="ButtonBase2_OnClick"
             Content="Primary Button" />
         <Button
             Margin="20 0 0 0"
@@ -39,6 +40,9 @@
         <Button
             Style="{StaticResource AgileDesignIconButton}"
             assist:ControlAssist.IconGeometry="{wpf:PackIconDataMarkup Person}"
+            assist:ControlAssist.CornerRadius="50"
+            Width="32"
+            Padding="0"
             Margin="20 0 0 0"
             Click="ButtonBase_OnClick2" />
 

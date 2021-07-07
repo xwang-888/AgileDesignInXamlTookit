@@ -37,7 +37,7 @@
                             Name="Border"
                             Margin="0"
                             Opacity="0.0"
-                            BorderThickness="5"
+                            BorderThickness="4"
                             CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                             BorderBrush="{TemplateBinding BorderBrush}"/>
                         <Border Background="{TemplateBinding Background}" 
@@ -45,7 +45,7 @@
                                 CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"/>
-                        
+
                         <ProgressBar x:Name="ProgressBar"
                                      Grid.Column="0"
                                      Margin="10 0 0 0"
@@ -73,11 +73,11 @@
                         <EventTrigger RoutedEvent="Click">
                             <EventTrigger.Actions>
                                 <BeginStoryboard>
-                                <Storyboard AutoReverse="True">
-                                        <ThicknessAnimation Storyboard.TargetName="Border"  From="0" By="-5" Duration="0:0:0.2" Storyboard.TargetProperty="Margin" />
-                                        <DoubleAnimation Storyboard.TargetName="Border"  From="0" By="0.15" Duration="0:0:0.2"  Storyboard.TargetProperty="Opacity" />
-                                </Storyboard>
-                            </BeginStoryboard>
+                                    <Storyboard >
+                                        <ThicknessAnimation AutoReverse="False" FillBehavior="HoldEnd"  Storyboard.TargetName="Border"  From="0" By="-4" Duration="0:0:0.3" Storyboard.TargetProperty="Margin" />
+                                        <DoubleAnimation AutoReverse="True" Storyboard.TargetName="Border"  From="0" By="0.25" Duration="0:0:0.3"  Storyboard.TargetProperty="Opacity" />
+                                    </Storyboard>
+                                </BeginStoryboard>
                             </EventTrigger.Actions>
                         </EventTrigger>
                         <Trigger SourceName="ProgressBar" Property="Visibility" Value="Visible">
@@ -88,6 +88,12 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value=".8"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value=".6"/>
+            </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value=".4"/>
             </Trigger>
@@ -117,42 +123,72 @@
         <Setter Property="BorderBrush" Value="#C3D2DE" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Foreground" Value="{DynamicResource  PrimaryHueMidBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <ContentPresenter Margin="{TemplateBinding Padding}"
+                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                      Content="{TemplateBinding Content}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="AgileDesignIconButton" TargetType="{x:Type ButtonBase}" BasedOn="{StaticResource ButtonBaseStyle}">
         <Setter Property="assist:ControlAssist.IconGeometry" Value="{x:Null}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
-                    <Border Background="{TemplateBinding Background}" 
-                            CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            BorderBrush="{TemplateBinding BorderBrush}">
 
-                    <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                          Margin="{TemplateBinding Padding}"
-                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                        <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                        <wpf:Avatar x:Name="PathMain" 
-                                    Height="{TemplateBinding Height}"
-                                    Width="{TemplateBinding Height}"
-                                    AvatarEffect="{x:Null}"
-                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                    Data="{Binding Path=(assist:ControlAssist.IconGeometry), RelativeSource={RelativeSource TemplatedParent}}"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Center" />
-                        <ContentPresenter x:Name="ContentPresenterMain"
-                                          RecognizesAccessKey="True"
-                                          Grid.Column="1"
-                                          Content="{TemplateBinding Content}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    <Grid>
+                        <Border
+                            Background="Transparent" 
+                            Grid.ColumnSpan="2" Name="Border"
+                            Margin="0" Opacity="0.0"
+                            BorderThickness="4"
+                            CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                            BorderBrush="{TemplateBinding BorderBrush}"/>
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                            Grid.ColumnSpan="2"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"/>
+
+                     <Grid Margin="{TemplateBinding Padding}">
+                         <Grid.ColumnDefinitions>
+                             <ColumnDefinition Width="Auto"/>
+                             <ColumnDefinition/>
+                         </Grid.ColumnDefinitions>
+                         <wpf:Avatar x:Name="PathMain" 
+                                     Height="{TemplateBinding Height}"
+                                     Width="{TemplateBinding Height}"
+                                     AvatarEffect="{x:Null}"
+                                     Background="Transparent"
+                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                     Data="{Binding Path=(assist:ControlAssist.IconGeometry), RelativeSource={RelativeSource TemplatedParent}}"
+                                     HorizontalAlignment="Right"
+                                     VerticalAlignment="Center" />
+                         <ContentPresenter x:Name="ContentPresenterMain"
+                                           RecognizesAccessKey="True"
+                                           Grid.Column="1"
+                                           Content="{TemplateBinding Content}"
+                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Grid>
                     </Grid>
-                    </Border>
                     <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Click">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard >
+                                        <ThicknessAnimation AutoReverse="False" FillBehavior="HoldEnd"  Storyboard.TargetName="Border"  From="0" By="-4" Duration="0:0:0.3" Storyboard.TargetProperty="Margin" />
+                                        <DoubleAnimation AutoReverse="True" Storyboard.TargetName="Border"  From="0" By="0.25" Duration="0:0:0.3"  Storyboard.TargetProperty="Opacity" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
                         <Trigger Property="Data" SourceName="PathMain" Value="{x:Null}">
                             <Setter TargetName="PathMain" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
@@ -164,5 +200,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-  
+
 </ResourceDictionary>

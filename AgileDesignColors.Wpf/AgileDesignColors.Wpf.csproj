@@ -52,7 +52,7 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Themes\Recommended\Primary\AguleDesignColor.CalendulaGold.xaml">
+    <Page Update="Themes\Recommended\Primary\AgileDesignColor.CalendulaGold.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
