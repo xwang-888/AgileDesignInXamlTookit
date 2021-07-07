@@ -10,9 +10,7 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <Button
-            Width="100"
-            Content="test" />
+        <Button Width="100" Content="test"/>
         <Button
             Width="100"
             Height="30"
