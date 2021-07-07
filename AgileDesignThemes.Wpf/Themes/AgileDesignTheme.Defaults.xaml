@@ -3,6 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Button.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Avatar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.ProgressBar.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type wpf:PackIcon}">
         <Setter Property="Height" Value="16" />
@@ -29,7 +30,7 @@
         </Setter>
     </Style>
 
-    <Style BasedOn="{StaticResource AgileDesignRaisedButton}" TargetType="{x:Type Button}" />
+    <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="{x:Type Button}" />
 
 
 </ResourceDictionary>

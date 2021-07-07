@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace AgileDesignThemes.Wpf.Themes.Assist
 {
@@ -21,6 +22,16 @@ namespace AgileDesignThemes.Wpf.Themes.Assist
         /// </summary>
         public static void SetCornerRadius(DependencyObject element, CornerRadius value) => element.SetValue(CornerRadiusProperty, value); 
         #endregion
+
+        public static readonly DependencyProperty IconGeometryProperty = DependencyProperty.RegisterAttached(
+            "IconGeometry", typeof(string), typeof(ControlAssist), new PropertyMetadata(null));
+        public static string GetIconGeometry(DependencyObject element) => (string) element.GetValue(IconGeometryProperty);
+        /// <summary>
+        /// 设置控件的Icon图标
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="value"></param>
+        public static void SetIconGeometry(DependencyObject element, string value) => element.SetValue(IconGeometryProperty,value);
 
     }
 }

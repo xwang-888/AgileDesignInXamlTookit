@@ -72,7 +72,7 @@ namespace AgileDesignThemes.Wpf.Themes.Assist
 
         #region AttachedProperty : OpacityProperty
         public static readonly DependencyProperty OpacityProperty
-            = DependencyProperty.RegisterAttached("Opacity", typeof(double), typeof(ButtonProgressAssist), new FrameworkPropertyMetadata(default(double)));
+            = DependencyProperty.RegisterAttached("Opacity", typeof(double), typeof(ButtonProgressAssist), new FrameworkPropertyMetadata(1.0));
 
         public static double GetOpacity(ButtonBase element) => (double)element.GetValue(OpacityProperty);
         public static void SetOpacity(ButtonBase element, double opacity) => element.SetValue(OpacityProperty, opacity);
