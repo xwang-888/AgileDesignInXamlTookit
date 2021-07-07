@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AgileDesignColors.Wpf;
 
 namespace AgileDesign.WpfDemo
 {
@@ -27,24 +28,12 @@ namespace AgileDesign.WpfDemo
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            if (Application.Current.Resources.MergedDictionaries.FirstOrDefault(x => x.Source.AbsoluteUri
-                .Contains(@"Themes/Recommended/Primary/AgileDesignColor")) is ResourceDictionary res)
-            {
-                Application.Current.Resources.MergedDictionaries.Remove(res);
-                res = new ResourceDictionary(){Source =  new Uri(@"pack://application:,,,/AgileDesignColors.Wpf;component/Themes/Recommended/Primary/AgileDesignColor.Lime.xaml") };
-                Application.Current.Resources.MergedDictionaries.Add(res);
-            }
+            AppColors.Instance.PrimaryColors = PrimaryColors.Volcano;
         }
 
         private void ButtonBase_OnClick2(object sender, RoutedEventArgs e)
         {
-            if (Application.Current.Resources.MergedDictionaries.FirstOrDefault(x => x.Source.AbsoluteUri
-                .Contains(@"Themes/Recommended/Primary/AgileDesignColor")) is ResourceDictionary res)
-            {
-                Application.Current.Resources.MergedDictionaries.Remove(res);
-                res = new ResourceDictionary() { Source = new Uri(@"pack://application:,,,/AgileDesignColors.Wpf;component/Themes/Recommended/Primary/AgileDesignColor.Volcano.xaml") };
-                Application.Current.Resources.MergedDictionaries.Add(res);
-            }
+            AppColors.Instance.PrimaryColors = PrimaryColors.Cyan;
         }
     }
 }

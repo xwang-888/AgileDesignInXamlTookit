@@ -1,15 +1,34 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/AgileDesignColors.Wpf;component/Themes/Colors/AgileDesignColor.Volcano.Primary.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource Primary3}" po:Freeze="True" />
-    <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="{StaticResource Primary3Foreground}" po:Freeze="True" />
-    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{StaticResource Primary6}" po:Freeze="True" />
-    <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="{StaticResource Primary6Foreground}" po:Freeze="True" />
-    <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="{StaticResource Primary7}" po:Freeze="True" />
-    <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="{StaticResource Primary7Foreground}" po:Freeze="True" />
+    <SolidColorBrush
+        x:Key="PrimaryHueLightBrush"
+        po:Freeze="True"
+        Color="{StaticResource Primary3}" />
+    <SolidColorBrush
+        x:Key="PrimaryHueLightForegroundBrush"
+        po:Freeze="True"
+        Color="{StaticResource Primary3Foreground}" />
+    <SolidColorBrush
+        x:Key="PrimaryHueMidBrush"
+        po:Freeze="True"
+        Color="{StaticResource Primary6}" />
+    <SolidColorBrush
+        x:Key="PrimaryHueMidForegroundBrush"
+        po:Freeze="True"
+        Color="{StaticResource Primary6Foreground}" />
+    <SolidColorBrush
+        x:Key="PrimaryHueDarkBrush"
+        po:Freeze="True"
+        Color="{StaticResource Primary7}" />
+    <SolidColorBrush
+        x:Key="PrimaryHueDarkForegroundBrush"
+        po:Freeze="True"
+        Color="{StaticResource Primary7Foreground}" />
 </ResourceDictionary>
