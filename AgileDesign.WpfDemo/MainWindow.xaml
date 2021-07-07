@@ -35,5 +35,6 @@
             Height="30"
             Foreground="{StaticResource PrimaryHueMidBrush}"
             Kind="About" />
+        <wpf:Avatar Data="{wpf:PackIconDataMarkup PackIconKind=AbTesting}" />
     </WrapPanel>
 </Window>
