@@ -11,7 +11,10 @@
     Height="450"
     mc:Ignorable="d">
     <WrapPanel>
-        <Button Width="100" Content="test" />
+        <Button
+            Width="100"
+            Margin="9"
+            Content="test" />
         <Button
             Width="100"
             Height="30"
@@ -27,9 +30,9 @@
             Margin="6"
             AvatarEffect="{x:Null}"
             Background="{x:Null}">
-            <wpf:Avatar.ICon>
+            <wpf:Avatar.Icon>
                 <ImageBrush ImageSource="屏幕截图 2021-06-09 092350.png" />
-            </wpf:Avatar.ICon>
+            </wpf:Avatar.Icon>
         </wpf:Avatar>
         <wpf:Avatar Margin="6" Data="M3.9 4L9 10.03C7.58 10.17 6.36 11.18 6 12.59L4 20H6.07L7.92 13.11C8.09 12.46 8.69 12 9.36 12H10.69L17.47 20H20.1L15 13.97C16.42 13.83 17.64 12.82 18 11.41L20 4H17.93L16.08 10.89C15.91 11.54 15.31 12 14.64 12H13.31L6.53 4Z" />
         <wpf:Avatar Margin="6">123</wpf:Avatar>
@@ -38,6 +41,6 @@
             Height="30"
             Foreground="{DynamicResource PrimaryHueMidBrush}"
             Kind="About" />
-        <wpf:Avatar Data="{wpf:PackIconDataMarkup PackIconKind=AbTesting}" />
+        <wpf:Avatar Data="{wpf:PackIconDataMarkup PackIconKind=Gamepad}" />
     </WrapPanel>
 </Window>

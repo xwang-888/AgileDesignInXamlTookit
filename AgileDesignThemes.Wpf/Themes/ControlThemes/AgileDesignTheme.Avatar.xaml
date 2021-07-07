@@ -23,7 +23,7 @@
     <ControlTemplate x:Key="Avatar.Image.Template" TargetType="wpf:Avatar">
         <Grid Background="Transparent">
             <Border
-                Background="{TemplateBinding ICon}"
+                Background="{TemplateBinding Icon}"
                 CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ControlAssist.CornerRadius)}"
                 Effect="{TemplateBinding AvatarEffect}" />
         </Grid>
@@ -55,14 +55,14 @@
         <Style.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
-                    <Condition Property="ICon" Value="{x:Null}" />
+                    <Condition Property="Icon" Value="{x:Null}" />
                     <Condition Property="Data" Value="{x:Null}" />
                 </MultiTrigger.Conditions>
                 <Setter Property="Template" Value="{StaticResource Avatar.Template}" />
             </MultiTrigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
-                    <Condition Property="ICon" Value="{x:Null}" />
+                    <Condition Property="Icon" Value="{x:Null}" />
                     <Condition Property="Content" Value="{x:Null}" />
                 </MultiTrigger.Conditions>
                 <Setter Property="Template" Value="{StaticResource Avatar.Path.Template}" />
