@@ -28,12 +28,12 @@ namespace AgileDesign.WpfDemo
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            AppColors.Default.PrimaryColors = PrimaryColors.Volcano;
+            AppColors.Instance.PrimaryColors = PrimaryColors.Volcano;
         }
 
         private void ButtonBase_OnClick2(object sender, RoutedEventArgs e)
         {
-            AppColors.Default.PrimaryColors = PrimaryColors.Cyan;
+            AppColors.Instance.PrimaryColors = PrimaryColors.Cyan;
         }
     }
 }
