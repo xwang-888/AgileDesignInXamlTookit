@@ -9,6 +9,17 @@
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
+    <Storyboard x:Key="ButtonBaseClickStoryboard">
+        <ThicknessAnimation AutoReverse="False" FillBehavior="HoldEnd"  Storyboard.TargetName="Border"  From="0" By="-4" Duration="0:0:0.3" Storyboard.TargetProperty="Margin" />
+        <DoubleAnimation AutoReverse="True" Storyboard.TargetName="Border"  From="0" By="0.25" Duration="0:0:0.3"  Storyboard.TargetProperty="Opacity" />
+    </Storyboard>
+    <ControlTemplate x:Key="ButtonBase.ProgressBar.ControlTemplate" TargetType="{x:Type ButtonBase}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border
     <Style x:Key="ButtonBaseStyle" TargetType="{x:Type ButtonBase}">
         <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
@@ -25,7 +36,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
-
+                  
                     <Grid>
                         <Border
                             Background="Transparent" 
@@ -40,13 +51,30 @@
                                 CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"/>
+                <ProgressBar x:Name="ProgressBar"
+                                     Grid.Column="0"
+                                     Margin="10 0 0 0"
+                                     Width="25" Height="25"
+                                     Style="{DynamicResource CircularProgressBar}"
+                                     Minimum="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Minimum)}"
+                                     Maximum="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Maximum)}"
+                                     Foreground="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IndicatorForeground)}"
+                                     Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IndicatorBackground)}"
+                                     BorderBrush="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IndicatorBackground)}"
+                                     Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Value)}"
+                                     IsIndeterminate="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IsIndeterminate)}"
+                                     Opacity="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Opacity)}"
+                                             HorizontalAlignment="Right"
+                                             VerticalAlignment="Center"/>
+                <ContentPresenter Grid.Column="1"
+                                          Margin="{TemplateBinding Padding}"
                         <Grid  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                VerticalAlignment="{TemplateBinding VerticalAlignment}"
                                Margin="{TemplateBinding Padding}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
+                         <Grid.ColumnDefinitions>
+                             <ColumnDefinition Width="Auto"/>
+                             <ColumnDefinition/>
+                         </Grid.ColumnDefinitions>
                             <StackPanel Orientation="Horizontal">
                                 <ProgressBar x:Name="ProgressBar"
                                       Margin="0 0 10 0"
@@ -69,6 +97,67 @@
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                           Content="{TemplateBinding Content}"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="ButtonBase.Click">
+                    <EventTrigger.Actions>
+                    <BeginStoryboard Storyboard="{StaticResource ButtonBaseClickStoryboard}"/>
+                </EventTrigger.Actions>
+                </EventTrigger>
+                <Trigger SourceName="ProgressBar" Property="Visibility" Value="Visible">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    <ControlTemplate x:Key="ButtonBase.ControlTemplate" TargetType="{x:Type ButtonBase}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border
+                            Background="Transparent" 
+                            Grid.ColumnSpan="2"
+                            Name="Border"
+                            Margin="0"
+                            Opacity="0.0"
+                            BorderThickness="4"
+                            CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                            BorderBrush="{TemplateBinding BorderBrush}"/>
+            <Border Background="{TemplateBinding Background}" 
+                                Grid.ColumnSpan="2"
+                                CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"/>
+            <ContentPresenter Grid.Column="1"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          Content="{TemplateBinding Content}"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="ButtonBase.Click" >
+                <EventTrigger.Actions>
+                    <BeginStoryboard Storyboard="{StaticResource ButtonBaseClickStoryboard}"/>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="ButtonBaseStyle" TargetType="{x:Type ButtonBase}">
+        <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+        <Setter Property="TextBlock.FontWeight" Value="Medium" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="TextBlock.FontSize" Value="14" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="10,4,10,4" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="assist:ControlAssist.CornerRadius" Value="2" />
+        <Setter Property="Template" Value="{StaticResource ButtonBase.ControlTemplate}"/>
                         </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -99,6 +188,9 @@
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value=".4"/>
             </Trigger>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self},Path=(assist:ButtonProgressAssist.IsIndicatorVisible)}" Value="True">
+                <Setter Property="Template" Value="{StaticResource ButtonBase.ProgressBar.ControlTemplate}"></Setter>
+            </DataTrigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="AgileDesignDefaultButton" TargetType="{x:Type ButtonBase}" BasedOn="{StaticResource ButtonBaseStyle}">
@@ -136,6 +228,8 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
     </Style>
 
 </ResourceDictionary>
