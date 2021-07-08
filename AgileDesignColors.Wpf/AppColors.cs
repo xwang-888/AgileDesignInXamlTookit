@@ -16,7 +16,7 @@ namespace AgileDesignColors.Wpf
         CalendulaGold
     }
 
-    public class AppColors
+    public class AppColors:ResourceDictionary
     {
         private PrimaryColors _primaryColors;
         private ResourceDictionary _primaryColorsResourceDictionaryTemp;
@@ -28,6 +28,7 @@ namespace AgileDesignColors.Wpf
             {
                 if (_primaryColors != value)
                 {
+                    
                     _primaryColors = value;
                     if (_primaryColorsResourceDictionaryTemp != null)
                         Application.Current.Resources.MergedDictionaries.Remove(_primaryColorsResourceDictionaryTemp);
