@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="AgileDesign.WpfDemo.Views.Controls.ButtonsUc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AgileDesign.WpfDemo.Views.Controls"
+             xmlns:assist="clr-namespace:AgileDesignThemes.Wpf.Themes.Assist;assembly=AgileDesignThemes.Wpf"
+             xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button  
+                Click="ButtonBase2_OnClick"
+                Content="Primary Button" />
+            <Button
+                Margin="20 0 0 0"
+                Click="ButtonBase_OnClick" 
+                Style="{StaticResource AgileDesignDefaultButton}"
+                Content="Default Button" />
+            <Button
+                Style="{StaticResource AgileDesignLinkButton}"
+                Content="Link Button"
+                Margin="20 0 0 0"
+                Click="ButtonBase_OnClick2" />
+            <Button
+                assist:ButtonProgressAssist.IsIndicatorVisible="True"
+                assist:ButtonProgressAssist.IsIndeterminate="True"
+                Content="Loading Button"
+                Margin="20 0 0 0"
+                Click="ButtonBase_OnClick2" />
+            <Button
+                Margin="20 0 0 0"
+                Click="ButtonBase_OnClick2" >
+                <StackPanel Orientation="Horizontal">
+                    <wpf:PackIcon Kind="Account"  VerticalAlignment="Center"/>
+                    <TextBlock Text="Icon Button"/>
+                </StackPanel>
+            </Button>
+            <Button
+                assist:ControlAssist.CornerRadius="50"
+                Width="32"
+                Padding="0"
+                Margin="20 0 0 0"
+                Click="ButtonBase_OnClick2" >
+                <wpf:PackIcon Kind="AbTesting"  VerticalAlignment="Center"/>
+            </Button>
+
+        </WrapPanel>
+    </Grid>
+</UserControl>

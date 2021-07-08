@@ -25,15 +25,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
-
+                  
                     <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
                         <Border
                             Background="Transparent" 
-                            Grid.ColumnSpan="2"
                             Name="Border"
                             Margin="0"
                             Opacity="0.0"
@@ -41,35 +36,48 @@
                             CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                             BorderBrush="{TemplateBinding BorderBrush}"/>
                         <Border Background="{TemplateBinding Background}" 
-                                Grid.ColumnSpan="2"
+                                x:Name="Background"
                                 CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"/>
-
-                        <ProgressBar x:Name="ProgressBar"
-                                     Grid.Column="0"
-                                     Margin="10 0 0 0"
-                                     Width="25" Height="25"
-                                     Style="{DynamicResource CircularProgressBar}"
-                                     Minimum="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Minimum)}"
-                                     Maximum="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Maximum)}"
-                                     Foreground="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IndicatorForeground)}"
-                                     Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IndicatorBackground)}"
-                                     BorderBrush="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IndicatorBackground)}"
-                                     Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Value)}"
-                                     IsIndeterminate="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IsIndeterminate)}"
-                                     Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IsIndicatorVisible), Converter={StaticResource BooleanToVisibilityConverter}}"
-                                     Opacity="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Opacity)}"
-                                             HorizontalAlignment="Right"
-                                             VerticalAlignment="Center"/>
-                        <ContentPresenter Grid.Column="1"
-                                          Margin="{TemplateBinding Padding}"
+                        <Grid  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                               VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                               Margin="{TemplateBinding Padding}">
+                         <Grid.ColumnDefinitions>
+                             <ColumnDefinition Width="Auto"/>
+                             <ColumnDefinition/>
+                         </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal">
+                                <ProgressBar x:Name="ProgressBar"
+                                      Margin="0 0 10 0"
+                                      Width="25" Height="25"
+                                      Style="{DynamicResource CircularProgressBar}"
+                                      Minimum="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Minimum)}"
+                                      Maximum="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Maximum)}"
+                                      Foreground="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IndicatorForeground)}"
+                                      Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IndicatorBackground)}"
+                                      BorderBrush="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IndicatorBackground)}"
+                                      Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Value)}"
+                                      IsIndeterminate="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IsIndeterminate)}"
+                                      Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.IsIndicatorVisible), Converter={StaticResource BooleanToVisibilityConverter}}"
+                                      Opacity="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assist:ButtonProgressAssist.Opacity)}"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <ContentPresenter Grid.Column="1"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                           Content="{TemplateBinding Content}"/>
+                        </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+                        </Trigger>
                         <EventTrigger RoutedEvent="Click">
                             <EventTrigger.Actions>
                                 <BeginStoryboard>
@@ -88,12 +96,6 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Opacity" Value=".8"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Opacity" Value=".6"/>
-            </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value=".4"/>
             </Trigger>
@@ -131,71 +133,6 @@
                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                       SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                       Content="{TemplateBinding Content}"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="AgileDesignIconButton" TargetType="{x:Type ButtonBase}" BasedOn="{StaticResource ButtonBaseStyle}">
-        <Setter Property="assist:ControlAssist.IconGeometry" Value="{x:Null}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ButtonBase}">
-
-                    <Grid>
-                        <Border
-                            Background="Transparent" 
-                            Grid.ColumnSpan="2" Name="Border"
-                            Margin="0" Opacity="0.0"
-                            BorderThickness="4"
-                            CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
-                            BorderBrush="{TemplateBinding BorderBrush}"/>
-                        <Border Background="{TemplateBinding Background}" 
-                                CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
-                            Grid.ColumnSpan="2"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            BorderBrush="{TemplateBinding BorderBrush}"/>
-
-                     <Grid Margin="{TemplateBinding Padding}">
-                         <Grid.ColumnDefinitions>
-                             <ColumnDefinition Width="Auto"/>
-                             <ColumnDefinition/>
-                         </Grid.ColumnDefinitions>
-                         <wpf:Avatar x:Name="PathMain" 
-                                     Height="{TemplateBinding Height}"
-                                     Width="{TemplateBinding Height}"
-                                     AvatarEffect="{x:Null}"
-                                     Background="Transparent"
-                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                     Data="{Binding Path=(assist:ControlAssist.IconGeometry), RelativeSource={RelativeSource TemplatedParent}}"
-                                     HorizontalAlignment="Right"
-                                     VerticalAlignment="Center" />
-                         <ContentPresenter x:Name="ContentPresenterMain"
-                                           RecognizesAccessKey="True"
-                                           Grid.Column="1"
-                                           Content="{TemplateBinding Content}"
-                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                        </Grid>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <EventTrigger RoutedEvent="Click">
-                            <EventTrigger.Actions>
-                                <BeginStoryboard>
-                                    <Storyboard >
-                                        <ThicknessAnimation AutoReverse="False" FillBehavior="HoldEnd"  Storyboard.TargetName="Border"  From="0" By="-4" Duration="0:0:0.3" Storyboard.TargetProperty="Margin" />
-                                        <DoubleAnimation AutoReverse="True" Storyboard.TargetName="Border"  From="0" By="0.25" Duration="0:0:0.3"  Storyboard.TargetProperty="Opacity" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger.Actions>
-                        </EventTrigger>
-                        <Trigger Property="Data" SourceName="PathMain" Value="{x:Null}">
-                            <Setter TargetName="PathMain" Property="Visibility" Value="Collapsed"/>
-                        </Trigger>
-                        <Trigger Property="Data" SourceName="PathMain" Value="">
-                            <Setter TargetName="PathMain" Property="Visibility" Value="Collapsed"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

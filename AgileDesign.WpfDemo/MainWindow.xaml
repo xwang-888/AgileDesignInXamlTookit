@@ -8,43 +8,28 @@
     xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
     xmlns:assist="clr-namespace:AgileDesignThemes.Wpf.Themes.Assist;assembly=AgileDesignThemes.Wpf"
     Title="MainWindow"
-    Width="800"
-    Height="450"
+    Width="1000"
+    Height="600"
     mc:Ignorable="d">
-    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button  
-            Click="ButtonBase2_OnClick"
-            Content="Primary Button" />
-        <Button
-            Margin="20 0 0 0"
-            Click="ButtonBase_OnClick" 
-            Style="{StaticResource AgileDesignDefaultButton}"
-            Content="Default Button" />
-        <Button
-            Style="{StaticResource AgileDesignLinkButton}"
-            Content="Link Button"
-            Margin="20 0 0 0"
-            Click="ButtonBase_OnClick2" />
-        <Button
-            assist:ButtonProgressAssist.IsIndicatorVisible="True"
-            assist:ButtonProgressAssist.IsIndeterminate="True"
-            Content="Loading Button"
-            Margin="20 0 0 0"
-            Click="ButtonBase_OnClick2" />
-        <Button
-            Style="{StaticResource AgileDesignIconButton}"
-            Content="Search" 
-            assist:ControlAssist.IconGeometry="{wpf:PackIconDataMarkup Search}"
-            Margin="20 0 0 0"
-            Click="ButtonBase_OnClick2" />
-        <Button
-            Style="{StaticResource AgileDesignIconButton}"
-            assist:ControlAssist.IconGeometry="{wpf:PackIconDataMarkup Person}"
-            assist:ControlAssist.CornerRadius="50"
-            Width="32"
-            Padding="0"
-            Margin="20 0 0 0"
-            Click="ButtonBase_OnClick2" />
-
-    </WrapPanel>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#393D49">
+            <ListBox   Background="#393D49" Foreground="White"
+                       SelectedItem="{Binding SelectedMenuItem}"
+                       ItemsSource="{Binding MenuItemList}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Header}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+        <ContentControl Content="{Binding SelectedMenuItem.Content}" Grid.Column="1"/>
+        
+    </Grid>
 </Window>

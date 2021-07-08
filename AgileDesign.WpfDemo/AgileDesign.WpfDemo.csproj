@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AgileDesignColors.Wpf\AgileDesignColors.Wpf.csproj" />
     <ProjectReference Include="..\AgileDesignThemes.Wpf\AgileDesignThemes.Wpf.csproj" />
   </ItemGroup>

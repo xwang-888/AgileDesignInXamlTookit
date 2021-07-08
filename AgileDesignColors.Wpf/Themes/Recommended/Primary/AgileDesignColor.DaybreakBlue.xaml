@@ -9,11 +9,11 @@
     <SolidColorBrush
         x:Key="PrimaryHueLightBrush"
         po:Freeze="True"
-        Color="{StaticResource Primary3}" />
+        Color="{StaticResource Primary4}" />
     <SolidColorBrush
         x:Key="PrimaryHueLightForegroundBrush"
         po:Freeze="True"
-        Color="{StaticResource Primary3Foreground}" />
+        Color="{StaticResource Primary4Foreground}" />
     <SolidColorBrush
         x:Key="PrimaryHueMidBrush"
         po:Freeze="True"
