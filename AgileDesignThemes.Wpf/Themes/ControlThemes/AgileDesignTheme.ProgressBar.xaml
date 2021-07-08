@@ -11,7 +11,7 @@
     <circularProgressBar1:NotZeroConverter x:Key="NotZeroConverter" />
 
     <Style x:Key="CircularProgressBar" TargetType="{x:Type ProgressBar}">
-        <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Width" Value="20" />
         <Setter Property="Height" Value="20" />
