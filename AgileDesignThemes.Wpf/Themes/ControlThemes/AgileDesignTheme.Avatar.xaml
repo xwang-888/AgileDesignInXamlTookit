@@ -41,13 +41,14 @@
         </Grid>
     </ControlTemplate>
     <Style TargetType="wpf:Avatar">
-        <Setter Property="Width" Value="45" />
         <Setter Property="Height" Value="45" />
+        <Setter Property="Width" Value="45" />
         <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Padding" Value="3" />
+        <Setter Property="FontSize" Value="18" />
         <Setter Property="assist:ControlAssist.CornerRadius" Value="3" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -59,6 +60,7 @@
                     <Condition Property="Data" Value="{x:Null}" />
                 </MultiTrigger.Conditions>
                 <Setter Property="Template" Value="{StaticResource Avatar.Template}" />
+                <Setter Property="Width" Value="auto" />
             </MultiTrigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>

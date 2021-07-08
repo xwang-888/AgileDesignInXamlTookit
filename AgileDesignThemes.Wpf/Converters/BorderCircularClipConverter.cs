@@ -5,7 +5,7 @@ using System.Windows.Data;
 using System.Windows.Markup;
 using System.Windows.Media;
 
-namespace AgileDesignThemes.Wpf.Converters.BorderElement
+namespace AgileDesignThemes.Wpf.Converters
 {
     [ValueConversion(typeof(object[]), typeof(Geometry))]
     public class BorderCircularClipConverter : MarkupExtension,IMultiValueConverter
