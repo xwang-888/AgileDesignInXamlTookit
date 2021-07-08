@@ -28,10 +28,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Opacity="0.0"
-                            RenderTransformOrigin="0.5,0.5">
-                            <Border.RenderTransform>
-                                <ScaleTransform />
-                            </Border.RenderTransform>
+                           >
                         </Border>
                         <Border
                             Background="{TemplateBinding Background}"
