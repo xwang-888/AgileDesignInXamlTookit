@@ -26,7 +26,289 @@
             Margin="20 0 0 0"
             Click="ButtonBase_OnClick2" />
         <Button
-            assist:ButtonProgressAssist.IsIndicatorVisible="True"
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
+            assist:ButtonProgressAssist.IsIndeterminate="True"
+            Content="Loading Button"
+            Margin="20 0 0 0"
+            Click="ButtonBase_OnClick2" />
+        <Button
+            assist:ButtonProgressAssist.IsIndicatorVisible="False"
             assist:ButtonProgressAssist.IsIndeterminate="True"
             Content="Loading Button"
             Margin="20 0 0 0"
@@ -45,6 +327,6 @@
             Padding="0"
             Margin="20 0 0 0"
             Click="ButtonBase_OnClick2" />
-
+        <wpf:Avatar/>
     </WrapPanel>
 </Window>
