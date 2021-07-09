@@ -7,20 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="屏幕截图 2021-06-09 092350.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AgileDesignColors.Wpf\AgileDesignColors.Wpf.csproj" />
     <ProjectReference Include="..\AgileDesignThemes.Wpf\AgileDesignThemes.Wpf.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="屏幕截图 2021-06-09 092350.png" />
   </ItemGroup>
 
 </Project>

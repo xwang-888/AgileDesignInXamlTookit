@@ -20,4 +20,26 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style TargetType="wpf:DrawerMenu">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="MinWidth" Value="48" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="wpf:DrawerMenu">
+                    <AdornerDecorator>
+                        <Grid>
+                            <Border
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            </Border>
+                            <Border Width="{TemplateBinding OpenPanelWidth}" Background="Transparent">
+                                <ContentPresenter />
+                            </Border>
+                        </Grid>
+                    </AdornerDecorator>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

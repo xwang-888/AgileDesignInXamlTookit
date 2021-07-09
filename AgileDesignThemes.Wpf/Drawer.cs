@@ -42,12 +42,13 @@ namespace AgileDesignThemes.Wpf
         }
 
         public static readonly DependencyProperty IsSwitchButtonProperty =
-            DependencyProperty.RegisterAttached("IsSwitchButton", typeof(bool), typeof(Drawer), new PropertyMetadata(false,(d,p)=> {
-                if(d is Button button)
+            DependencyProperty.RegisterAttached("IsSwitchButton", typeof(bool), typeof(Drawer), new PropertyMetadata(false, (d, p) =>
+            {
+                if (d is Button button)
                 {
-                    if(button.IsLoaded)
+                    if (button.IsLoaded)
                     {
-                        if(Drawer.GetParentObject<Drawer>((DependencyObject)button, null) is Drawer drawer)
+                        if (Drawer.GetParentObject<Drawer>((DependencyObject)button, null) is Drawer drawer)
                         {
                             if (p.NewValue is bool ret)
                             {
@@ -70,7 +71,7 @@ namespace AgileDesignThemes.Wpf
                             button.Loaded -= Button_Loaded;
                         }
                     }
-                  
+
                 }
             }));
 
@@ -92,23 +93,23 @@ namespace AgileDesignThemes.Wpf
             }
         }
 
-        bool _isOpen = true;
+        protected bool _isOpen = true;
         private double _widthTemp, HeightTemp;
-        public void OpenDrawerAnimation()
+        public virtual void OpenDrawerAnimation()
         {
             var animation = new DoubleAnimation(_widthTemp, new Duration(TimeSpan.FromMilliseconds(200)))
             {
                 EasingFunction = new PowerEase { EasingMode = EasingMode.EaseInOut }
-            };            
+            };
             BeginAnimation(ContentControl.WidthProperty, animation);
             _isOpen = true;
         }
 
-        public void CloseDrawerAnimation()
+        public virtual void CloseDrawerAnimation()
         {
             var minWidth = double.IsNaN(MinWidth) ? ActualWidth / 2d : MinWidth;
             _widthTemp = ActualWidth;
-            var animation = new DoubleAnimation(_widthTemp,minWidth, new Duration(TimeSpan.FromMilliseconds(200)))
+            var animation = new DoubleAnimation(_widthTemp, minWidth, new Duration(TimeSpan.FromMilliseconds(200)))
             {
                 EasingFunction = new PowerEase { EasingMode = EasingMode.EaseInOut }
             };
@@ -125,7 +126,8 @@ namespace AgileDesignThemes.Wpf
         }
 
         public static readonly DependencyProperty IsOpenProperty =
-            DependencyProperty.Register("IsOpen", typeof(bool), typeof(Drawer), new PropertyMetadata(true, (d, p) => {
+            DependencyProperty.Register("IsOpen", typeof(bool), typeof(Drawer), new PropertyMetadata(true, (d, p) =>
+            {
                 if (d is Drawer drawer)
                 {
                     if (drawer.IsOpen)

@@ -7,7 +7,7 @@
     xmlns:local="clr-namespace:AgileDesign.WpfDemo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
-    Title="MainWindow"
+    Title="AgileDesign"
     Width="1000"
     Height="600"
     mc:Ignorable="d">
@@ -16,35 +16,40 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <wpf:Drawer
-            Width="200"
+        <wpf:DrawerMenu
+            DisplayModel="CompactOverlay"
+            IsOpen="{Binding ElementName=Button,Path=IsChecked}"
             HorizontalAlignment="Left"
             Background="#393D49">
             <StackPanel>
-                <Button
-                    Width="30"
+                <ToggleButton
+                    Name="Button"
+                    Width="48"
                     Height="30"
-                    HorizontalAlignment="Right"
-                    wpf:Drawer.IsSwitchButton="True"
+                    IsChecked="True"
+                    Foreground="White"
+                    HorizontalAlignment="Left"
                     Background="Transparent"
                     BorderBrush="Transparent">
-                    <wpf:PackIcon VerticalAlignment="Center" Kind="AbTesting" />
-                </Button>
+                    <wpf:PackIcon VerticalAlignment="Center" Kind="AccountGroup" />
+                </ToggleButton>
                 <ListBox
                     Background="#393D49"
                     Foreground="White"
+                    ItemContainerStyle="{StaticResource ListBoxItemMenuStyle}"
                     ItemsSource="{Binding MenuItemList}"
                     SelectedItem="{Binding SelectedMenuItem}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Header}" />
+                            <StackPanel Orientation="Horizontal"   Margin="2,0,0,0">
+                                <wpf:PackIcon VerticalAlignment="Center" Kind="AccessPoint" Width="20" Height="20"  />
+                                <TextBlock Text="{Binding Header}"  Margin="24,0,0,0"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </StackPanel>
-        </wpf:Drawer>
+        </wpf:DrawerMenu>
         <ContentControl Grid.Column="1" Content="{Binding SelectedMenuItem.Content}" />
 
     </Grid>
