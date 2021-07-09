@@ -50,7 +50,7 @@ namespace AgileDesignThemes.Wpf
 
         public override void OpenDrawerAnimation()
         {
-            var animation = new DoubleAnimation(OpenPanelWidth, new Duration(TimeSpan.FromMilliseconds(200)))
+            var animation = new DoubleAnimation(CompactPanelWidth, OpenPanelWidth, new Duration(TimeSpan.FromMilliseconds(200)))
             {
                 EasingFunction = new PowerEase { EasingMode = EasingMode.EaseInOut }
             };

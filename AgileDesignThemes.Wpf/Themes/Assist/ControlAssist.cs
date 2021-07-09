@@ -20,18 +20,26 @@ namespace AgileDesignThemes.Wpf.Themes.Assist
         /// 控制控件的圆角半径
         /// Controls the corner radius of the surrounding box.
         /// </summary>
-        public static void SetCornerRadius(DependencyObject element, CornerRadius value) => element.SetValue(CornerRadiusProperty, value); 
+        public static void SetCornerRadius(DependencyObject element, CornerRadius value) => element.SetValue(CornerRadiusProperty, value);
         #endregion
 
         public static readonly DependencyProperty IconGeometryProperty = DependencyProperty.RegisterAttached(
             "IconGeometry", typeof(string), typeof(ControlAssist), new PropertyMetadata(null));
-        public static string GetIconGeometry(DependencyObject element) => (string) element.GetValue(IconGeometryProperty);
+        public static string GetIconGeometry(DependencyObject element) => (string)element.GetValue(IconGeometryProperty);
         /// <summary>
         /// 设置控件的Icon图标
         /// </summary>
         /// <param name="element"></param>
         /// <param name="value"></param>
-        public static void SetIconGeometry(DependencyObject element, string value) => element.SetValue(IconGeometryProperty,value);
+        public static void SetIconGeometry(DependencyObject element, string value) => element.SetValue(IconGeometryProperty, value);
+
+        public static readonly DependencyProperty HintTextProperty = DependencyProperty.RegisterAttached(
+            "HintText", typeof(string), typeof(ControlAssist), new PropertyMetadata(default(string)));
+        public static string GetHintText(DependencyObject element) => (string)element.GetValue(HintTextProperty);
+        /// <summary>
+        /// 设置控件的提示文字
+        /// </summary>
+        public static void SetHintText(DependencyObject element, string value) => element.SetValue(HintTextProperty, value);
 
     }
 }

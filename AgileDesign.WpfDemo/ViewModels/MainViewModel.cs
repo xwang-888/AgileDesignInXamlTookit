@@ -18,7 +18,8 @@ namespace AgileDesign.WpfDemo.ViewModels
             MenuItemList = new ObservableCollection<MenuItem>()
             {
                 new(){Header = "Button", Content = new ButtonsUc()},
-                new(){Header = "Loading", Content = new ProgressBarUc()},
+                new(){Header = "TextBox", Content = new TextBoxUc()},
+                new(){Header = "ProgressBar", Content = new ProgressBarUc()},
                 new(){Header = "Drwaer", Content = new DrawerUc()}
             };
             SelectedMenuItem = MenuItemList.First();

@@ -8,6 +8,7 @@
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.ProgressBar.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.ListBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Drawer.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.TextBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type wpf:PackIcon}">
         <Setter Property="Height" Value="16" />

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AgileDesign.WpfDemo.ViewModels;
 using AgileDesignColors.Wpf;
 
 namespace AgileDesign.WpfDemo.Views.Controls
@@ -24,6 +25,7 @@ namespace AgileDesign.WpfDemo.Views.Controls
         public ButtonsUc()
         {
             InitializeComponent();
+            this.DataContext = new ButtonsUcViewModel();
         }
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {

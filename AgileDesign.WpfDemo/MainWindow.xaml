@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
     Title="AgileDesign"
-    Width="1000"
+    Width="1200"
     Height="600"
     mc:Ignorable="d">
     <Grid>
@@ -31,7 +31,7 @@
                     HorizontalAlignment="Left"
                     Background="Transparent"
                     BorderBrush="Transparent">
-                    <wpf:PackIcon VerticalAlignment="Center" Kind="AccountGroup" />
+                    <wpf:PackIcon VerticalAlignment="Center" Kind="MenuCompact"/>
                 </ToggleButton>
                 <ListBox
                     Background="#393D49"

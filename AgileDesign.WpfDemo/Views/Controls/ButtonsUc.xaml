@@ -10,41 +10,78 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button  
-                Click="ButtonBase2_OnClick"
-                Content="Primary Button" />
-            <Button
-                Margin="20 0 0 0"
-                Click="ButtonBase_OnClick" 
-                Style="{StaticResource AgileDesignDefaultButton}"
-                Content="Default Button" />
-            <Button
-                Style="{StaticResource AgileDesignLinkButton}"
-                Content="Link Button"
-                Margin="20 0 0 0"
-                Click="ButtonBase_OnClick2" />
-            <Button
-                assist:ButtonProgressAssist.IsIndicatorVisible="True"
-                assist:ButtonProgressAssist.IsIndeterminate="True"
-                Content="Loading Button"
-                Margin="20 0 0 0"
-                Click="ButtonBase_OnClick2" />
-            <Button
-                Margin="20 0 0 0"
-                Click="ButtonBase_OnClick2" >
-                <StackPanel Orientation="Horizontal">
-                    <wpf:PackIcon Kind="Account"  VerticalAlignment="Center"/>
-                    <TextBlock Text="Icon Button"/>
-                </StackPanel>
-            </Button>
-            <Button
-                assist:ControlAssist.CornerRadius="50"
-                Width="32"
-                Padding="0"
-                Margin="20 0 0 0"
-                Click="ButtonBase_OnClick2" >
-                <wpf:PackIcon Kind="AbTesting"  VerticalAlignment="Center"/>
-            </Button>
+           <Border Width="300" Height="300" BorderThickness="1" BorderBrush="#dddddd" CornerRadius="10" Margin="0 0 10 0">
+               <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                   <Button  
+                       Click="ButtonBase2_OnClick"
+                       Content="Primary Button" />
+                   <Button
+                       Margin="20 0 0 0"
+                       Click="ButtonBase_OnClick" 
+                       Style="{StaticResource AgileDesignDefaultButton}"
+                       Content="Default Button" />
+                   <Button
+                       Style="{StaticResource AgileDesignLinkButton}"
+                       Content="Link Button"
+                       Margin="20 0 0 0"
+                       Click="ButtonBase_OnClick2" />
+                </WrapPanel>
+           </Border>
+            <Border Width="300" Height="300" BorderThickness="1" BorderBrush="#dddddd" CornerRadius="10" Margin="0 0 10 0">
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button
+                        Margin="20 0 0 0"
+                        Click="ButtonBase_OnClick2" >
+                        <StackPanel Orientation="Horizontal">
+                            <wpf:PackIcon Kind="Account"  VerticalAlignment="Center"/>
+                            <TextBlock Text="Icon Button"/>
+                        </StackPanel>
+                    </Button>
+                    <Button
+                        assist:ControlAssist.CornerRadius="50"
+                        Width="32"
+                        Padding="0"
+                        Margin="20 0 0 0"
+                        Click="ButtonBase_OnClick2" >
+                        <wpf:PackIcon Kind="AccountEdit"  VerticalAlignment="Center"/>
+                    </Button>
+                    <Button
+                        Style="{StaticResource AgileDesignDefaultButton}"
+                        Margin="20 20 0 0"
+                        Click="ButtonBase_OnClick2" >
+                        <StackPanel Orientation="Horizontal">
+                            <wpf:PackIcon Kind="Account"  VerticalAlignment="Center"/>
+                            <TextBlock Text="Icon Button"/>
+                        </StackPanel>
+                    </Button>
+                    <Button
+                        Style="{StaticResource AgileDesignDefaultButton}"
+                        assist:ControlAssist.CornerRadius="50"
+                        Width="32"
+                        Padding="0"
+                        Margin="20 20 0 0"
+                        Click="ButtonBase_OnClick2" >
+                        <wpf:PackIcon Kind="AccountEdit"  VerticalAlignment="Center"/>
+                    </Button>
+                </WrapPanel>
+            </Border>
+            <Border Width="300" Height="300" BorderThickness="1" BorderBrush="#dddddd"  CornerRadius="10">
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                    <Button
+                        assist:ButtonProgressAssist.IsIndicatorVisible="True"
+                        assist:ButtonProgressAssist.IsIndeterminate="True"
+                        Content="Loading Button"
+                        Click="ButtonBase_OnClick2" />
+                    <Button
+                        Margin="0 20 0 0"
+                        assist:ButtonProgressAssist.IsIndicatorVisible="{Binding IsIndicator}"
+                        assist:ButtonProgressAssist.IsIndeterminate="True"
+                        Content="Click Me" Command="{Binding LoadingBtnCommand}"
+                        />
+                </WrapPanel>
+            </Border>
+           
+          
 
         </WrapPanel>
     </Grid>
