@@ -31,7 +31,7 @@
                     HorizontalAlignment="Left"
                     Background="Transparent"
                     BorderBrush="Transparent">
-                    <wpf:PackIcon VerticalAlignment="Center" Kind="MenuCompact"/>
+                    <wpf:PackIcon VerticalAlignment="Center" Kind="Menu"/>
                 </ToggleButton>
                 <ListBox
                     Background="#393D49"
