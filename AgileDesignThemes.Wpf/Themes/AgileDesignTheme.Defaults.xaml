@@ -9,6 +9,8 @@
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.ListBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Drawer.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.TextBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.ToggleButton.xaml" />
+
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type wpf:PackIcon}">
         <Setter Property="Height" Value="16" />
@@ -36,8 +38,10 @@
     </Style>
 
     <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="{x:Type Button}" />
+    <Style BasedOn="{StaticResource TextBoxBaseStyle}" TargetType="{x:Type TextBox}" />
     <Style BasedOn="{StaticResource ListBoxBaseStyle}" TargetType="{x:Type ListBox}" />
     <Style BasedOn="{StaticResource ProgressBarBaseStyle}" TargetType="{x:Type ProgressBar}" />
+    <Style BasedOn="{StaticResource ToggleSwitchBaseStyle}" TargetType="{x:Type ToggleButton}" />
 
 
 </ResourceDictionary>

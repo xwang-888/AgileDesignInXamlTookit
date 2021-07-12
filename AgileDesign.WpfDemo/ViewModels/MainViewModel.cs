@@ -20,6 +20,7 @@ namespace AgileDesign.WpfDemo.ViewModels
                 new(){Header = "Button", Content = new ButtonsUc()},
                 new(){Header = "TextBox", Content = new TextBoxUc()},
                 new(){Header = "ProgressBar", Content = new ProgressBarUc()},
+                new(){Header = "ToggleButton", Content = new ToggleButtonsUc()},
                 new(){Header = "Drwaer", Content = new DrawerUc()}
             };
             SelectedMenuItem = MenuItemList.First();

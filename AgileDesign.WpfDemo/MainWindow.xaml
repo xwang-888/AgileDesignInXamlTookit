@@ -24,14 +24,50 @@
             <StackPanel>
                 <ToggleButton
                     Name="Button"
-                    Width="48"
+                    Width="24"
+                    Margin="10"
                     Height="30"
+                    Style="{StaticResource MenuToggleButtonStyle}"
                     IsChecked="True"
                     Foreground="White"
                     HorizontalAlignment="Left"
                     Background="Transparent"
                     BorderBrush="Transparent">
                     <wpf:PackIcon VerticalAlignment="Center" Kind="Menu"/>
+                    <ToggleButton.Resources>
+
+                        <!--<Style TargetType="ToggleButton">
+                            <Setter Property="Background"  Value="Transparent"/>
+                            <Setter Property="Cursor"  Value="Hand"/>
+                            <Setter  Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                    <Border Background="{TemplateBinding Background}" Name="Border" >
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                          RenderTransformOrigin=".5,.5">
+                                            <ContentPresenter.RenderTransform>
+                                                <RotateTransform x:Name="RotateTransform" Angle="0"/>
+                                            </ContentPresenter.RenderTransform>
+                                        </ContentPresenter>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Trigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetName="RotateTransform" Storyboard.TargetProperty="Angle" By="360" Duration="0:0:0.2"/>
+                                                                <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Opacity" By="0" Duration="0:0:0.2"/>
+                                                            </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.EnterActions>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>-->
+                    </ToggleButton.Resources>
                 </ToggleButton>
                 <ListBox
                     Background="#393D49"

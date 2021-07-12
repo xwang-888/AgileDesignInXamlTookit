@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="AgileDesign.WpfDemo.Views.Controls.ToggleButtonsUc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AgileDesign.WpfDemo.Views.Controls"
+             xmlns:assist="clr-namespace:AgileDesignThemes.Wpf.Themes.Assist;assembly=AgileDesignThemes.Wpf"
+             xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border BorderThickness="1"  Width="300" Height="300"  BorderBrush="#dddddd" CornerRadius="10" Margin="0 0 10 0">
+            <WrapPanel>
+              <StackPanel>
+                    <ToggleButton IsChecked="True"  FontSize="8" />
+                    <ToggleButton IsChecked="True" 
+                                  Content="开启"
+                                  assist:ToggleButtonAssist.OnContent="关闭"
+                                  FontSize="8"
+                                  Margin="0 10 0 0" />
+                    <ToggleButton IsChecked="True" 
+                                  FontSize="8"
+                                  Margin="0 10 0 0" >
+                        <wpf:PackIcon Kind="Check"/>
+                        <assist:ToggleButtonAssist.OnContent>
+                            <wpf:PackIcon Kind="Close"/>
+                        </assist:ToggleButtonAssist.OnContent>
+                    </ToggleButton>
+                    <ToggleButton IsChecked="True" 
+                                  IsEnabled="False"
+                                  assist:ToggleButtonAssist.OnContent="关闭"
+                                  FontSize="8"
+                                  Margin="0 10 0 0" />
+                </StackPanel>
+            </WrapPanel>
+        </Border>
+    </Grid>
+</UserControl>
