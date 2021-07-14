@@ -16,7 +16,7 @@
         <GradientStop Color="#60FFFFFF" Offset="0.4"/>
         <GradientStop Color="#60FFFFFF" Offset="0.6"/>
         <GradientStop Color="#00FFFFFF" Offset="1"/>
-    </LinearGradientBrush>
+    </LinearGradientBrush> 
 
     <Style x:Key="CircularProgressBar" TargetType="{x:Type ProgressBar}">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />

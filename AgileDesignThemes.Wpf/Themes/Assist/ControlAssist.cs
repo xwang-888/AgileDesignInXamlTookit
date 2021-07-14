@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using AgileDesignThemes.Wpf.Enums;
 
 namespace AgileDesignThemes.Wpf.Themes.Assist
 {
@@ -22,6 +23,17 @@ namespace AgileDesignThemes.Wpf.Themes.Assist
         /// </summary>
         public static void SetCornerRadius(DependencyObject element, CornerRadius value) => element.SetValue(CornerRadiusProperty, value);
         #endregion
+        #region 控制控件的阴影。
+        public static readonly DependencyProperty ShadowDepthProperty = DependencyProperty.RegisterAttached(
+            "ShadowDepth", typeof(ShadowDepth), typeof(ControlAssist), new PropertyMetadata(ShadowDepth.Depth0));
+        public static ShadowDepth GetShadowDepth(DependencyObject element) => (ShadowDepth)element.GetValue(ShadowDepthProperty);
+        /// <summary>
+        /// 控制控件的阴影
+        /// </summary>
+        public static void SetShadowDepth(DependencyObject element, ShadowDepth value) => element.SetValue(ShadowDepthProperty, value);
+        #endregion
+
+
 
         public static readonly DependencyProperty IconGeometryProperty = DependencyProperty.RegisterAttached(
             "IconGeometry", typeof(string), typeof(ControlAssist), new PropertyMetadata(null));
@@ -42,4 +54,5 @@ namespace AgileDesignThemes.Wpf.Themes.Assist
         public static void SetHintText(DependencyObject element, string value) => element.SetValue(HintTextProperty, value);
 
     }
+   
 }

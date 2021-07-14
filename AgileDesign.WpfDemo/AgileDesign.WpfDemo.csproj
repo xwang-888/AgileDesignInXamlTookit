@@ -15,4 +15,8 @@
     <ProjectReference Include="..\AgileDesignThemes.Wpf\AgileDesignThemes.Wpf.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
 </Project>
