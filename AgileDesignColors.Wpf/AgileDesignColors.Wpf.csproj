@@ -1,61 +1,54 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-  <PropertyGroup>
-    <TargetFrameworks>net461;netcoreapp3.1</TargetFrameworks>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net461;netcoreapp3.1</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Page Remove="Themes\Colors\AgileDesignColor.DustRed.Primary.xaml" />
-    <Page Remove="Themes\Colors\AgileDesignColor.SunriseYellow.Primary.xaml" />
-    <Page Remove="Themes\Recommended\AgileDesignColor.DustRed.xaml" />
-    <Page Remove="Themes\Recommended\AgileDesignColor.SunriseYellow.xaml" />
-    <Page Remove="Themes\Recommended\State\AgileDesignTheme.Dark.xaml" />
-  </ItemGroup>
+	<ItemGroup>
+		<Page Remove="Themes\Colors\AgileDesignColor.DustRed.Primary.xaml" />
+		<Page Remove="Themes\Recommended\AgileDesignColor.DustRed.xaml" />
+		<Page Remove="Themes\Recommended\State\AgileDesignTheme.Dark.xaml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="Themes\Colors\AgileDesignColor.DustRed.Primary.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Themes\Colors\AgileDesignColor.SunriseYellow.Primary.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Themes\Recommended\Primary\AgileDesignColor.DustRed.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Themes\Recommended\Primary\AgileDesignColor.SunriseYellow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Themes\Recommended\State\AgileDesignTheme.Dark.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="Themes\Colors\AgileDesignColor.DustRed.Primary.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</None>
+		<None Include="Themes\Recommended\State\AgileDesignTheme.Dark.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Page Update="Themes\Colors\AgileDesignColor.Cyan.Primary.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Themes\Colors\AgileDesignColor.DaybreakBlue.Primary.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Themes\Recommended\Primary\AgileDesignColor.Lime.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Themes\Recommended\Primary\AgileDesignColor.SunsetOrange.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Themes\Recommended\Primary\AgileDesignColor.Volcano.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Themes\Recommended\Primary\AgileDesignColor.CalendulaGold.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
+	<ItemGroup>
+		<Page Update="Themes\Colors\AgileDesignColor.Cyan.Primary.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Update="Themes\Colors\AgileDesignColor.DaybreakBlue.Primary.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Update="Themes\Colors\AgileDesignColor.SunriseYellow.Primary.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Update="Themes\Recommended\Primary\AgileDesignColor.Lime.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Update="Themes\Recommended\Primary\AgileDesignColor.SunsetOrange.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Update="Themes\Recommended\Primary\AgileDesignColor.Volcano.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Update="Themes\Recommended\Primary\AgileDesignColor.CalendulaGold.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
 
 </Project>

@@ -17,6 +17,7 @@ namespace AgileDesign.WpfDemo.ViewModels
         {
             MenuItemList = new ObservableCollection<MenuItem>()
             {
+                new(){Header = "Theme", Content = new ThemeUc()},
                 new(){Header = "Button", Content = new ButtonsUc()},
                 new(){Header = "TextBox", Content = new TextBoxUc()},
                 new(){Header = "ProgressBar", Content = new ProgressBarUc()},
