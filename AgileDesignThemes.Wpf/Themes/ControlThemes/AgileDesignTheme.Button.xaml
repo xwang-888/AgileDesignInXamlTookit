@@ -254,7 +254,7 @@
     <Style x:Key="AgileDesignDefaultButton" TargetType="{x:Type ButtonBase}" BasedOn="{StaticResource ButtonBaseStyle}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="#C3D2DE" />
-        <Setter Property="Foreground" Value="{DynamicResource  PrimaryHueLightForegroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource AgileDesignBody}" />
         <Setter Property="Template" Value="{StaticResource ButtonDefault.ControlTemplate}"></Setter>
 
         <Style.Triggers>

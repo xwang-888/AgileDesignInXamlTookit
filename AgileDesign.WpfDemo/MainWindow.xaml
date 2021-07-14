@@ -8,7 +8,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
     Title="AgileDesign"
-    Width="1200"
+    Width="1250"
+    TextElement.Foreground="{DynamicResource AgileDesignBody}"
+    Background="{DynamicResource AgileDesignPaper}"
     Height="600"
     mc:Ignorable="d">
     <Grid>
@@ -86,7 +88,7 @@
                 </ListBox>
             </StackPanel>
         </wpf:DrawerMenu>
-        <ContentControl Grid.Column="1" Content="{Binding SelectedMenuItem.Content}" />
+        <ContentControl Grid.Column="1" Content="{Binding SelectedMenuItem.Content}"  Margin="10"/>
 
     </Grid>
 </Window>
