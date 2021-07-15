@@ -49,7 +49,6 @@ namespace AgileDesignThemes.Wpf
             get => (double)GetValue(SecondsProperty);
             set => SetValue(SecondsProperty, value);
         }
-
     }
 
    
