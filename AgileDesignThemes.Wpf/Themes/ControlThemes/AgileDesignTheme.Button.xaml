@@ -10,8 +10,8 @@
         </ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
     <Storyboard x:Key="ButtonBase.Storyboard">
-        <ThicknessAnimation AutoReverse="False" FillBehavior="HoldEnd"  Storyboard.TargetName="Border"  From="0" By="-4" Duration="0:0:0.3" Storyboard.TargetProperty="Margin" />
-        <DoubleAnimation AutoReverse="True" Storyboard.TargetName="Border"  From="0" By="0.25" Duration="0:0:0.3"  Storyboard.TargetProperty="Opacity" />
+        <ThicknessAnimation AutoReverse="False" FillBehavior="HoldEnd"  Storyboard.TargetName="Border"  From="0" By="-4" Duration="0:0:0.2" Storyboard.TargetProperty="Margin" />
+        <DoubleAnimation AutoReverse="True" Storyboard.TargetName="Border"  From="0" By="0.25" Duration="0:0:0.15"  Storyboard.TargetProperty="Opacity" />
     </Storyboard>
     <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="ButtonBase.ProgressBar.ControlTemplate">
         <Grid>

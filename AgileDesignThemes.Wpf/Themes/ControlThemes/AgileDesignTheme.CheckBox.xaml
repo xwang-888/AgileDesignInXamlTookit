@@ -1,0 +1,86 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="CheckBox" x:Key="CheckBoxBaseStyle">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Padding" Value="3 0"/>
+        <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}"/>
+        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Click">
+                            <ThicknessAnimation AutoReverse="False" FillBehavior="HoldEnd"  Storyboard.TargetName="Border"  From="0" By="-4" Duration="0:0:0.2" Storyboard.TargetProperty="Margin" />
+                            <DoubleAnimation AutoReverse="True" Storyboard.TargetName="Border"  From="0" By="0.25" Duration="0:0:0.2"  Storyboard.TargetProperty="Opacity" />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid Background="Transparent"  SnapsToDevicePixels="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Width="{TemplateBinding Height}" Height="{TemplateBinding Height}">
+                             <Border Background="Transparent" 
+                                     Name="Border"
+                                     Margin="0"
+                                     Opacity="0.0"
+                                     BorderThickness="1.5"
+                                     CornerRadius="2"
+                                     BorderBrush="{TemplateBinding Background}"/>
+                            <Border  Background="Transparent"
+                                      BorderThickness="1" 
+                                      Name="Graphic"
+                                      CornerRadius="2" 
+                                      BorderBrush="{DynamicResource  AgileDesignCheckBoxOff}"/>
+                            <Grid x:Name="CheckedMark" 
+                                  Visibility="Collapsed">
+                                <Path  Name="Path"  Stretch="Fill" 
+                                       Margin="3 4"
+                                       SnapsToDevicePixels="False" Fill="White" Data="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                             </Grid>
+                            </Grid>
+                        <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                       <MultiDataTrigger>
+                           <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self},Path=IsPressed}" Value="True"/>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self},Path=IsChecked}" Value="False"/>
+                            </MultiDataTrigger.Conditions>
+                           <MultiDataTrigger.EnterActions>
+                               <BeginStoryboard Storyboard="{StaticResource Click}"/>
+                           </MultiDataTrigger.EnterActions>
+                       </MultiDataTrigger>
+                        <Trigger Property="IsPressed" Value="true"/>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="CheckedMark" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="Graphic" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="Graphic" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Background}"/>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background"  Value="{DynamicResource AgileDesignCheckBoxDisabled}" />
+                            <Setter Property="Opacity" Value="0.56"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="CheckedMark" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="Path" Property="Margin" Value="1"/>
+                            <Setter Property="Data" TargetName="Path" Value="M6,13L6,11L18,11L18,13M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" />
+                            <Setter Property="Fill" TargetName="Path" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" />
+                        </Trigger>
+                        <Trigger Property="Validation.HasError" Value="true">
+                            <Setter Property="Background" TargetName="Graphic" Value="{DynamicResource AgileDesignValidationErrorBrush}" />
+                            <Setter Property="Control.Foreground" TargetName="contentPresenter" Value="{DynamicResource AgileDesignValidationErrorBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

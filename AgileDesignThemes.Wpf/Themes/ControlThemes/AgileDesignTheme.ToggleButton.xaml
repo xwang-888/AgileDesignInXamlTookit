@@ -280,7 +280,7 @@
                                 <Border HorizontalAlignment="Left" CornerRadius="22" Name="thumb" Effect="{StaticResource EffectShadow2}" Background="White" Width="15" Height="15" RenderTransformOrigin="0.5,0.5" >
                                     <Border.RenderTransform>
                                         <TransformGroup>
-                                            <TranslateTransform/>
+                                            <TranslateTransform X="1" Y="0"/>
                                         </TransformGroup>
                                     </Border.RenderTransform>
                                 </Border>

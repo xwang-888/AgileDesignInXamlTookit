@@ -7,33 +7,42 @@
              xmlns:assist="clr-namespace:AgileDesignThemes.Wpf.Themes.Assist;assembly=AgileDesignThemes.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center">
-       
-        <Border Width="300" Height="300" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1" Margin="10 0">
-            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Vertical">
-                <ProgressBar Width="250" Height="8"  IsIndeterminate="True"  Margin="0 10 0 0"/>
-                <ProgressBar  Height="20" Value="20" Margin="0 10 0 0" assist:ControlAssist.CornerRadius="10"/>
-                <ProgressBar  Height="20" Value="40" Margin="0 10 0 0"/>
-                <ProgressBar  Height="20" Value="60" Margin="0 10 0 0"/>
-            </WrapPanel>
-        </Border>
-        <Border Width="300" Height="300" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1" Margin="10 0">
-            <WrapPanel>
-                <ProgressBar Width="50" Height="50" IsIndeterminate="True"
-                             Style="{StaticResource CircularProgressBar}" Margin="0 10 0 0"/>
-                <ProgressBar Width="50" Height="50" Value="60"
-                             Style="{StaticResource CircularProgressBar}" Margin="0 10 0 0"/>
-            </WrapPanel>
-        </Border>
-        <Border Width="300" Height="300" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1">
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                <ProgressBar Width="8" Height="250" Orientation="Vertical" IsIndeterminate="True"  Margin="10 0 0 0"/>
-                <ProgressBar Value="20" Margin="10 0 0 0"  Orientation="Vertical" />
-                <ProgressBar Value="40" Margin="10 0 0 0" Orientation="Vertical"/>
-                <ProgressBar Value="60" Margin="10 0 0 0" Orientation="Vertical"/>
-            </WrapPanel>
-        </Border>
-      
-      
-    </StackPanel>
+    <GroupBox Header="ProgressBars"
+              Foreground="White"
+              BorderThickness="0"
+              assist:ControlAssist.ShadowDepth="Depth3">
+       <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center">
+
+           <Border Width="300" Height="300" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1" Margin="10 0">
+               <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Vertical">
+                   <ProgressBar Width="250" Height="8"  IsIndeterminate="True"  Margin="0 10 0 0"/>
+                   <ProgressBar  Height="20" Value="20" Margin="0 10 0 0" assist:ControlAssist.CornerRadius="10"/>
+                   <ProgressBar  Height="20" Value="40" Margin="0 10 0 0"/>
+                   <ProgressBar  Height="20" Value="60" Margin="0 10 0 0"/>
+               </WrapPanel>
+           </Border>
+           <Border Width="300" Height="300" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1" Margin="10 0">
+               <WrapPanel>
+                   <ProgressBar Width="50" Height="50" IsIndeterminate="True"
+                                Style="{StaticResource CircularProgressBar}" Margin="10 10 0 0"/>
+                   <ProgressBar Width="50" Height="50" Value="20"
+                                Style="{StaticResource CircularProgressBar}" Margin="10 10 0 0"/>
+                   <ProgressBar Width="50" Height="50" Value="40"
+                                Style="{StaticResource CircularProgressBar}" Margin="10 10 0 0"/>
+                   <ProgressBar Width="50" Height="50" Value="60"
+                                Style="{StaticResource CircularProgressBar}" Margin="10 10 0 0"/>
+               </WrapPanel>
+           </Border>
+           <Border Width="300" Height="300" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1">
+               <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                   <ProgressBar Width="8" Height="250" Orientation="Vertical" IsIndeterminate="True"  Margin="10 0 0 0"/>
+                   <ProgressBar Value="20" Margin="10 0 0 0"  Orientation="Vertical" />
+                   <ProgressBar Value="40" Margin="10 0 0 0" Orientation="Vertical"/>
+                   <ProgressBar Value="60" Margin="10 0 0 0" Orientation="Vertical"/>
+               </WrapPanel>
+           </Border>
+
+
+       </StackPanel>
+    </GroupBox>
 </UserControl>

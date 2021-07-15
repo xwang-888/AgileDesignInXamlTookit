@@ -7,10 +7,10 @@
     xmlns:local="clr-namespace:AgileDesign.WpfDemo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
-    Title="AgileDesign"
-    Width="1250"
+    Title="AgileDesignDemo"
     TextElement.Foreground="{DynamicResource AgileDesignBody}"
     Background="{DynamicResource AgileDesignPaper}"
+    Width="1250"
     Height="600"
     mc:Ignorable="d">
     <Grid>
@@ -18,61 +18,23 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
         <wpf:DrawerMenu
+            Grid.Row="0"
+            Grid.RowSpan="2"
             DisplayModel="CompactOverlay"
             IsOpen="{Binding ElementName=Button,Path=IsChecked}"
             HorizontalAlignment="Left"
-            Background="#393D49">
+            Background="#001529">
             <StackPanel>
-                <ToggleButton
-                    Name="Button"
-                    Width="24"
-                    Margin="10"
-                    Height="30"
-                    Style="{StaticResource MenuToggleButtonStyle}"
-                    IsChecked="True"
-                    Foreground="White"
-                    HorizontalAlignment="Left"
-                    Background="Transparent"
-                    BorderBrush="Transparent">
-                    <wpf:PackIcon VerticalAlignment="Center" Kind="Menu"/>
-                    <ToggleButton.Resources>
-
-                        <!--<Style TargetType="ToggleButton">
-                            <Setter Property="Background"  Value="Transparent"/>
-                            <Setter Property="Cursor"  Value="Hand"/>
-                            <Setter  Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="ToggleButton">
-                                    <Border Background="{TemplateBinding Background}" Name="Border" >
-                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                          RenderTransformOrigin=".5,.5">
-                                            <ContentPresenter.RenderTransform>
-                                                <RotateTransform x:Name="RotateTransform" Angle="0"/>
-                                            </ContentPresenter.RenderTransform>
-                                        </ContentPresenter>
-                                        </Border>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsChecked" Value="True">
-                                                <Trigger.EnterActions>
-                                                    <BeginStoryboard>
-                                                        <Storyboard>
-                                                            <DoubleAnimation Storyboard.TargetName="RotateTransform" Storyboard.TargetProperty="Angle" By="360" Duration="0:0:0.2"/>
-                                                                <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Opacity" By="0" Duration="0:0:0.2"/>
-                                                            </Storyboard>
-                                                    </BeginStoryboard>
-                                                </Trigger.EnterActions>
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>-->
-                    </ToggleButton.Resources>
-                </ToggleButton>
-                <ListBox
-                    Background="#393D49"
+                <Border Background="#4D5C6A" Margin="20" Height="30" >
+                    <TextBlock Text="AgileDesign" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                </Border>
+            <ListBox
+                    Background="#001529"
                     Foreground="White"
                     ItemContainerStyle="{StaticResource ListBoxItemMenuStyle}"
                     ItemsSource="{Binding MenuItemList}"
@@ -80,7 +42,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal"   Margin="2,0,0,0">
-                                <wpf:PackIcon VerticalAlignment="Center" Kind="AccessPoint" Width="20" Height="20"  />
+                                <wpf:PackIcon VerticalAlignment="Center" Kind="{Binding Icon}" Width="20" Height="20"  />
                                 <TextBlock Text="{Binding Header}"  Margin="24,0,0,0"/>
                             </StackPanel>
                         </DataTemplate>
@@ -88,7 +50,28 @@
                 </ListBox>
             </StackPanel>
         </wpf:DrawerMenu>
-        <ContentControl Grid.Column="1" Content="{Binding SelectedMenuItem.Content}"  Margin="10"/>
+        <wpf:Card Grid.Column="1" Grid.Row="0"
+                Height="50"
+                Background="#FFFFFF">
+       
+            <Grid>
+                <ToggleButton
+                    Name="Button"
+                    Width="24"
+                    Margin="10"
+                    Height="30"
+                    Style="{StaticResource MenuToggleButtonStyle}"
+                    IsChecked="True"
+                    HorizontalAlignment="Left"
+                    BorderBrush="Transparent">
+                    <wpf:PackIcon VerticalAlignment="Center" Kind="Menu"/>
+                </ToggleButton>
+            </Grid>
+        </wpf:Card>
+        <ContentControl Grid.Row="1" 
+                        Grid.Column="1"
+                        Content="{Binding SelectedMenuItem.Content}" 
+                        Margin="20"/>
 
     </Grid>
 </Window>

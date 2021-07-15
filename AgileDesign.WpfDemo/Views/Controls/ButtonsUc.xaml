@@ -13,9 +13,9 @@
                   Foreground="White"
                   assist:ControlAssist.ShadowDepth="Depth4"
                   BorderThickness="0">
-            <WrapPanel  Margin="10">
+            <WrapPanel  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <wpf:Card Width="300" Height="300"
-                     ShadowDepth="Depth2"
+                     ShadowDepth="Depth0"
                      BorderThickness="1"
                      BorderBrush="#dddddd" 
                      Background="White"
@@ -38,7 +38,7 @@
                     </WrapPanel>
                 </wpf:Card>
                 <wpf:Card Width="300" Height="300"
-                           ShadowDepth="Depth2"
+                           ShadowDepth="Depth0"
                            BorderThickness="1"
                            BorderBrush="#dddddd" 
                            Background="White"
@@ -82,7 +82,7 @@
                     </WrapPanel>
                 </wpf:Card >
                 <wpf:Card Width="300" Height="300"
-                          ShadowDepth="Depth2"
+                          ShadowDepth="Depth0"
                           BorderThickness="1"
                           BorderBrush="#dddddd" 
                           Background="White"

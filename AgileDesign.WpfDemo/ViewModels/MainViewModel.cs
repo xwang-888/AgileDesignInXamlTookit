@@ -17,12 +17,14 @@ namespace AgileDesign.WpfDemo.ViewModels
         {
             MenuItemList = new ObservableCollection<MenuItem>()
             {
-                new(){Header = "Button", Content = new ButtonsUc()},
-                new(){Header = "TextBox", Content = new TextBoxUc()},
-                new(){Header = "ProgressBar", Content = new ProgressBarUc()},
-                new(){Header = "ToggleButton", Content = new ToggleButtonsUc()},
-                new(){Header = "GroupBox", Content = new GroupBoxsUc()},
-                new(){Header = "Drwaer", Content = new DrawerUc()}
+                new(){Header = "Button",Icon ="Button" ,Content = new ButtonsUc()},
+                new(){Header = "TextBox",Icon ="TextBox", Content = new TextBoxUc()},
+                new(){Header = "ProgressBar",Icon ="ProgressCheck", Content = new ProgressBarUc()},
+                new(){Header = "ToggleButton",Icon = "ToggleSwitch",Content = new ToggleButtonsUc()},
+                new(){Header = "CheckBox",Icon = "CheckBox",Content = new CheckBoxsUc()},
+                new(){Header = "RadioButton",Icon = "RadioButtonChecked",Content = new RadioButtonUc()},
+                new(){Header = "GroupBox", Icon = "Group",Content = new GroupBoxsUc()},
+                new(){Header = "Drwaer",Icon = "Style",Content = new DrawerUc()}
             };
             SelectedMenuItem = MenuItemList.First();
         }

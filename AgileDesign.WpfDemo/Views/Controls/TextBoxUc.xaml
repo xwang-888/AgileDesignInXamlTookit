@@ -9,16 +9,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Border Width="300" Height="300" BorderThickness="1" BorderBrush="#dddddd" CornerRadius="10" Margin="0 0 10 0">
-            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <GroupBox Header="Text Boxs"
+                  Foreground="White"
+                  BorderThickness="0"
+                  assist:ControlAssist.ShadowDepth="Depth3">
+            <wpf:Card Width="300" Height="300"
+                      CornerRadius="10"
+                      ShadowDepth="Depth4"
+                      Margin="0 0 10 0">
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                <TextBox Width="250"/>
-                <TextBox Width="250" assist:ControlAssist.HintText="提示文字"  Margin="0 20 0 0"/>
-                <TextBox Width="250"
+                    <TextBox Width="250"/>
+                    <TextBox Width="250" assist:ControlAssist.HintText="提示文字"  Margin="0 20 0 0"/>
+                    <TextBox Width="250"
                          assist:ControlAssist.HintText="请输入账号" 
                          assist:ControlAssist.IconGeometry="{wpf:PackIconDataMarkup Account}" 
                          Margin="0 20 0 0"/>
-            </WrapPanel>
-        </Border>
+                </WrapPanel>
+            </wpf:Card>
+        </GroupBox>
     </Grid>
 </UserControl>
