@@ -24,6 +24,8 @@ namespace AgileDesign.WpfDemo.ViewModels
                 new(){Header = "CheckBox",Icon = "CheckBox",Content = new CheckBoxsUc()},
                 new(){Header = "RadioButton",Icon = "RadioButtonChecked",Content = new RadioButtonUc()},
                 new(){Header = "GroupBox", Icon = "Group",Content = new GroupBoxsUc()},
+                new(){Header = "Message", Icon = "Message",Content = new MessageUc()},
+                new(){Header = "Theme", Icon = "Theme",Content = new ThemeUc()},
                 new(){Header = "Drwaer",Icon = "Style",Content = new DrawerUc()}
             };
             SelectedMenuItem = MenuItemList.First();
