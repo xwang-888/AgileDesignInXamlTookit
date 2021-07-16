@@ -11,10 +11,6 @@
     <None Remove="Resources\**" />
     <Page Remove="Resources\**" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
   <PropertyGroup>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>

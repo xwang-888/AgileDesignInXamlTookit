@@ -9,23 +9,45 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+       
         <GroupBox Header="Message"
                   Foreground="White"
                   BorderThickness="0"
                   assist:ControlAssist.ShadowDepth="Depth3">
-            <wpf:Card HorizontalAlignment="Center" 
+            <wpf:Card HorizontalAlignment="Right" 
                       ShadowDepth="Depth4"
                       Foreground="Black"
                       CornerRadius="10"
-                      VerticalAlignment="Top">
-              <WrapPanel Orientation="Vertical" Margin="20">
-                  <wpf:Message Text="This is a normal message."/>
-                  <wpf:Message Text="This is a Success message." MessageType="Success"/>
-                  <wpf:Message Text="This is a Warning message." MessageType="Warning"/>
-                  <wpf:Message Text="This is a Error message." MessageType="Error"/>
+                      Width="450"
+                      Height="100"
+                      VerticalAlignment="Bottom">
+               <WrapPanel HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                    <Button Click="OpenWindow_OnClick" 
+                           Content="New Window"
+                           Style="{StaticResource AgileDesignDefaultButton}"/>
+                   <Button Click="ButtonBase_OnClick" Content="Normal" Margin="10 0 0 0"/>
+
+                    <Button Click="ButtonBase1_OnClick" Content="Error" 
+                            Margin="10 0 0 0"
+                            Background="{StaticResource ErrorColor}" 
+                            BorderBrush="{StaticResource ErrorColor}"/>
+                    <Button Click="ButtonBase2_OnClick" Content="Success" 
+                            Margin="10 0 0 0"
+                            Background="{StaticResource SuccessColor}" 
+                            BorderBrush="{StaticResource SuccessColor}"/>
+                    <Button Click="ButtonBase3_OnClick" Content="Warning" 
+                            Margin="10 0 0 0"
+                            Background="{StaticResource WarningColor}" 
+                            BorderBrush="{StaticResource WarningColor}"/>
                 </WrapPanel>
             </wpf:Card>
-
+            
         </GroupBox>
+        <StackPanel Orientation="Vertical"
+                    Width="300"
+                    CanVerticallyScroll="True">
+          
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -10,6 +10,7 @@
     Title="AgileDesignDemo"
     TextElement.Foreground="{DynamicResource AgileDesignBody}"
     Background="{DynamicResource AgileDesignPaper}"
+    WindowStartupLocation="CenterScreen"
     Width="1250"
     Height="600"
     mc:Ignorable="d">

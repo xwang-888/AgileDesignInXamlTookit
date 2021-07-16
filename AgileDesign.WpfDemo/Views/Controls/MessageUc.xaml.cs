@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AgileDesignThemes.Wpf;
+using AgileDesignThemes.Wpf.Enums;
 
 namespace AgileDesign.WpfDemo.Views.Controls
 {
@@ -23,6 +25,33 @@ namespace AgileDesign.WpfDemo.Views.Controls
         public MessageUc()
         {
             InitializeComponent();
+        }
+
+        private void OpenWindow_OnClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow(){Width = 500, Height = 500};
+            main.ShowDialog();
+            //Message.Show(new MessageInfo(){Message = "This is a normal message.", MessageType =  MessageType.Info, Time = 3,Token = "Hello"});
+        }
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Message.Show(new MessageInfo() { Message = "This is a normal message.", MessageType = MessageType.Info, Time = 3, Token = "Hello" });
+        }
+
+        private void ButtonBase1_OnClick(object sender, RoutedEventArgs e)
+        {
+            Message.Show(new MessageInfo() { Message = "This is a Error Message.", MessageType = MessageType.Error, Time = 3, Token = "Hello" });
+
+        }
+        private void ButtonBase2_OnClick(object sender, RoutedEventArgs e)
+        {
+            Message.Show(new MessageInfo() { Message = "This is a Error Success.", MessageType = MessageType.Success, Time = 3, Token = "Hello" });
+
+        }
+        private void ButtonBase3_OnClick(object sender, RoutedEventArgs e)
+        {
+            Message.Show(new MessageInfo() { Message = "This is a Error Warning.", MessageType = MessageType.Warning, Time = 3, Token = "Hello" });
+
         }
     }
 }

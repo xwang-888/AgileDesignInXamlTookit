@@ -18,17 +18,56 @@
     <Geometry x:Key="SuccessGeometry">
         M510.545 28.22c-267.043 0-483.521 216.477-483.521 483.52s216.479 483.521 483.521 483.521 483.52-216.479 483.52-483.521S777.588 28.22 510.545 28.22zM776.855 407.855l-315.37 315.37c-9.763 9.763-22.559 14.645-35.355 14.645-12.796 0-25.592-4.882-35.355-14.645l-176.13-176.13c-19.526-19.525-19.526-51.184 0-70.71 19.526-19.526 51.184-19.527 70.711 0L426.13 617.159l280.015-280.015c19.527-19.526 51.184-19.526 70.711 0C796.382 356.671 796.382 388.329 776.855 407.855z
     </Geometry>
+    <Storyboard x:Key="MsgOnLoaded">
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)">
+            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+            <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+            <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+            <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+        </DoubleAnimationUsingKeyFrames>
+
+    </Storyboard>
+    <Storyboard x:Key="MsgClose">
+        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+            <SplineDoubleKeyFrame KeySpline="0.59,0.38,0.2,0" KeyTime="00:00:00.3" Value="0"/>
+        </DoubleAnimationUsingKeyFrames>
+        
+    </Storyboard>
     <SolidColorBrush x:Key="InfoColor" Color="#1890FF"></SolidColorBrush>
     <SolidColorBrush x:Key="WarningColor" Color="#FAAD14"></SolidColorBrush>
-    <SolidColorBrush x:Key="ErrorColor" Color="#FF4D4F"></SolidColorBrush>
+    <SolidColorBrush x:Key="ErrorColor" Color="#FF0000"></SolidColorBrush>
     <SolidColorBrush x:Key="SuccessColor" Color="#52C41A"></SolidColorBrush>
     <Style TargetType="{x:Type wpf:Message}">
         <Setter Property="MinHeight" Value="32"/>
         <Setter Property="FontSize" Value="12"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"/>
         <Setter Property="Padding" Value="15 10"/>
-        <Setter Property="Margin" Value="0 5"/>
+        <Setter Property="Margin" Value="5 3"/>
+        <Setter Property="Opacity" Value="0"/>
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.5"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Setter.Value>
+        </Setter>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="LayoutTransform">
+            <Setter.Value>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type wpf:Message}">
@@ -36,6 +75,7 @@
                               Height="{TemplateBinding Height}"
                               Margin="{TemplateBinding Margin}"
                               CornerRadius="2"
+                              x:Name="MessageCtl"
                               ShadowDepth="Depth3">
                         <Grid Margin="{TemplateBinding Padding}">
                             <Grid.ColumnDefinitions>
@@ -72,5 +112,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard Storyboard="{StaticResource MsgOnLoaded}"/>
+            </EventTrigger>
+           
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>
