@@ -10,38 +10,98 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
        
-        <GroupBox Header="Message"
-                  Foreground="White"
-                  BorderThickness="0"
+        <GroupBox BorderThickness="0"
                   assist:ControlAssist.ShadowDepth="Depth3">
-            <wpf:Card HorizontalAlignment="Right" 
-                      ShadowDepth="Depth4"
-                      Foreground="Black"
-                      CornerRadius="10"
-                      Width="450"
-                      Height="100"
-                      VerticalAlignment="Bottom">
-               <WrapPanel HorizontalAlignment="Center"
-                          VerticalAlignment="Center">
-                    <Button Click="OpenWindow_OnClick" 
-                           Content="New Window"
-                           Style="{StaticResource AgileDesignDefaultButton}"/>
-                   <Button Click="ButtonBase_OnClick" Content="Normal" Margin="10 0 0 0"/>
-
-                    <Button Click="ButtonBase1_OnClick" Content="Error" 
-                            Margin="10 0 0 0"
-                            Background="{StaticResource ErrorColor}" 
-                            BorderBrush="{StaticResource ErrorColor}"/>
-                    <Button Click="ButtonBase2_OnClick" Content="Success" 
-                            Margin="10 0 0 0"
-                            Background="{StaticResource SuccessColor}" 
-                            BorderBrush="{StaticResource SuccessColor}"/>
-                    <Button Click="ButtonBase3_OnClick" Content="Warning" 
-                            Margin="10 0 0 0"
-                            Background="{StaticResource WarningColor}" 
-                            BorderBrush="{StaticResource WarningColor}"/>
-                </WrapPanel>
-            </wpf:Card>
+            <GroupBox.Header>
+                <TextBlock Text="Message" Foreground="White"/>
+            </GroupBox.Header>
+            <wpf:ScrollViewer IsInertiaEnabled="True">
+                <Label VerticalContentAlignment="Top">
+                    <Label.Content>
+                        <StackPanel>
+                            <!--#region PromptText -->
+                            <TextBlock Text="Message全局提示"
+                                       FontWeight="Black"
+                                       FontSize="20"
+                                       Margin="10 10 0 5"/>
+                            <TextBlock Text="全局展示操作反馈信息。"
+                                       FontSize="13"
+                                       Margin="10 0 0 5"/>
+                            <TextBlock Text="什么时候使用" 
+                                       FontSize="20" 
+                                       Margin="10 10 0 5"/>
+                            <TextBlock Text="○ 可提供成功、警告和错误等反馈信息" 
+                                       FontSize="13"
+                                       Margin="10 0 0 5"/>
+                            <TextBlock Text="○ 顶部居中显示并自动消失，是一种不打断用户操作的轻量级提示方式。" 
+                                       FontSize="13"
+                                       Margin="10 0 0 5"/>
+                            <TextBlock Text="API"
+                                       FontWeight="Black"
+                                       FontSize="20"
+                                       Margin="10 10 0 5"/>
+                            <TextBlock Text="组件提供了一些静态方法，使用方式和参数如下：" 
+                                       FontSize="13"
+                                       Margin="10 0 0 5"/>
+                            <Label Content="Message.Info(string content,int duration=3)" 
+                                   FontSize="13"
+                                   MinHeight="25"
+                                   Background="{StaticResource InfoColor}"
+                                   Style="{StaticResource AgileDesignPrimaryLabel}"
+                                   Margin="10 0 0 3"/>
+                            <Label Content="Message.Success(string content,int duration=3)" 
+                                   FontSize="13"
+                                   MinHeight="25"
+                                   Style="{StaticResource AgileDesignSuccessLabel}"
+                                   Margin="10 0 0 3"/>
+                            <Label Content="Message.Warning(string content,int duration=3)" 
+                                   FontSize="13"
+                                   MinHeight="25"
+                                   Style="{StaticResource AgileDesignWarningLabel}"
+                                   Margin="10 0 0 3"/>
+                            <Label Content="Message.Error(string content,int duration=3)" 
+                                   FontSize="13"
+                                   MinHeight="25"
+                                   Style="{StaticResource AgileDesignErrorLabel}"
+                                   Margin="10 0 0 3"/>
+                            <!--#endregion-->
+                            <wpf:Card HorizontalAlignment="Center" 
+                        ShadowDepth="Depth4"
+                        Foreground="Black"
+                        CornerRadius="5"
+                        Padding="10"
+                        Margin="10"
+                        VerticalAlignment="Bottom">
+                  <WrapPanel HorizontalAlignment="Center"
+                             VerticalAlignment="Center">
+                      <TextBlock Text="示例：" FontSize="15" VerticalAlignment="Center"/>
+                      <Button Click="OpenWindow_OnClick" 
+                              Content="Open Window"
+                              Style="{StaticResource AgileDesignDefaultButton}"/>
+                      <Button Click="OpenDialogWindow_OnClick" 
+                              Content="Open DialogWindow"
+                              Margin="10 0 0 0"
+                              Style="{StaticResource AgileDesignDefaultButton}"/>
+                      <Button Click="ButtonBase_OnClick" Content="Normal" 
+                              Margin="10 0 0 0"/>
+                      <Button Click="ButtonBase1_OnClick" Content="Error" 
+                              Margin="10 0 0 0"
+                              Background="{StaticResource ErrorColor}" 
+                              BorderBrush="{StaticResource ErrorColor}"/>
+                      <Button Click="ButtonBase2_OnClick" Content="Success" 
+                              Margin="10 0 0 0"
+                              Background="{StaticResource SuccessColor}" 
+                              BorderBrush="{StaticResource SuccessColor}"/>
+                      <Button Click="ButtonBase3_OnClick" Content="Warning" 
+                              Margin="10 0 0 0"
+                              Background="{StaticResource WarningColor}" 
+                              BorderBrush="{StaticResource WarningColor}"/>
+                  </WrapPanel>
+              </wpf:Card>
+                        </StackPanel>
+                    </Label.Content>
+                </Label>
+          </wpf:ScrollViewer>
             
         </GroupBox>
         <StackPanel Orientation="Vertical"

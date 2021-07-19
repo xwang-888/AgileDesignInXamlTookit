@@ -147,41 +147,6 @@ namespace AgileDesignThemes.Wpf
             if (!PanelDic.ContainsKey(token))
                 PanelDic.Add(token, panel);
         }
-        public static void Show(MessageInfo msgInfo)
-        {
-
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                var msgCtl = new Message()
-                {
-                    Text = msgInfo.Message,
-                    MessageType = msgInfo.MessageType,
-                    Seconds = msgInfo.Time
-                };
-                if (!string.IsNullOrEmpty(msgInfo.Token))
-                {
-                    if (PanelDic.TryGetValue(msgInfo.Token, out var panel))
-                    {
-                        panel?.Children.Add(msgCtl);
-                    }
-                    else
-                    {
-                        if (_parentWindow == null)
-                            MessagePanel = CreateDefaultPanel();
-                        else
-                        {
-                            var element = WindowHelper.GetActiveWindow();
-                            if (!ReferenceEquals(_parentWindow, element))
-                                MessagePanel = CreateDefaultPanel();
-                        }
-                        MessagePanel?.Children.Add(msgCtl);
-                        var scrollViewer = VisualHelper.GetParent<ScrollViewer>(MessagePanel);
-                        scrollViewer?.ScrollToEnd();
-                        msgCtl.Close();
-                    }
-                }
-            });
-        }
         /// <summary>
         /// 未指定消息容器，创建全局默认消息容器
         /// </summary>
@@ -205,6 +170,8 @@ namespace AgileDesignThemes.Wpf
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalScrollBarVisibility = ScrollBarVisibility.Hidden,
+                IsInertiaEnabled = true,
+                IsPenetrating = true,
                 Padding = new Thickness(20),
                 Content = panel
             };
@@ -217,6 +184,89 @@ namespace AgileDesignThemes.Wpf
 
             return panel;
         }
+        /// <summary>
+        /// 全局容器添加消息
+        /// </summary>
+        /// <param name="msgCtl"></param>
+        private static void MessagePanelAddMessage(Message msgCtl)
+        {
+            if (_parentWindow == null)
+                MessagePanel = CreateDefaultPanel();
+            else
+            {
+                var element = WindowHelper.GetActiveWindow();
+                if (!ReferenceEquals(_parentWindow, element))
+                    MessagePanel = CreateDefaultPanel();
+            }
+            MessagePanel?.Children.Add(msgCtl);
+            var scrollViewer = VisualHelper.GetParent<ScrollViewer>(MessagePanel);
+            scrollViewer?.ScrollToEnd();
+        }
+        private static void Show(MessageInfo msgInfo)
+        {
+
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var msgCtl = new Message()
+                {
+                    Text = msgInfo.Content,
+                    MessageType = msgInfo.MessageType,
+                    Seconds = msgInfo.Duration,
+                };
+                if (!string.IsNullOrEmpty(msgInfo.Token))
+                {
+                    if (PanelDic.TryGetValue(msgInfo.Token, out var panel))
+                    {
+                        panel?.Children.Add(msgCtl);
+                        var scrollViewer = VisualHelper.GetParent<ScrollViewer>(panel);
+                        scrollViewer?.ScrollToEnd();
+                    }
+                    else
+                        MessagePanelAddMessage(msgCtl);
+                }
+                else
+                    MessagePanelAddMessage(msgCtl);
+
+                msgCtl.Close();
+            });
+        }
+
+        /// <summary>
+        /// 普通消息提示
+        /// </summary>
+        /// <param name="content">文字</param>
+        /// <param name="duration">持续时间,默认为3ms</param>
+        /// <param name="token">容器的唯一标识,默认值为null自动跟踪</param>
+        public static void Info(string content, int duration = 3, string token = null) =>
+            Show(new MessageInfo() { Content = content, Duration = duration, MessageType = MessageType.Info, Token = token });
+
+        /// <summary>
+        /// 成功消息提示
+        /// </summary>
+        /// <param name="content">文字</param>
+        /// <param name="duration">持续时间,默认为3ms</param>
+        /// <param name="token">容器的唯一标识,默认值为null自动跟踪</param>
+        public static void Success(string content, int duration = 3, string token = null) =>
+            Show(new MessageInfo() { Content = content, Duration = duration, MessageType = MessageType.Success, Token = token });
+
+        /// <summary>
+        /// 警告消息提示
+        /// </summary>
+        /// <param name="content">文字</param>
+        /// <param name="duration">持续时间,默认为3ms</param>
+        /// <param name="token">容器的唯一标识,默认值为null自动跟踪</param>
+        public static void Warning(string content, int duration = 3, string token = null) =>
+            Show(new MessageInfo() { Content = content, Duration = duration, MessageType = MessageType.Warning, Token = token });
+
+        /// <summary>
+        /// 错误消息提示
+        /// </summary>
+        /// <param name="content">文字</param>
+        /// <param name="duration">持续时间,默认为3ms</param>
+        /// <param name="token">容器的唯一标识,默认值为null自动跟踪</param>
+        public static void Error(string content, int duration = 3, string token = null) =>
+            Show(new MessageInfo() { Content = content, Duration = duration, MessageType = MessageType.Error, Token = token });
+
         #endregion
 
     }
@@ -225,9 +275,9 @@ namespace AgileDesignThemes.Wpf
 
     public class MessageInfo
     {
-        public string Message { get; set; }
+        public string Content { get; set; }
         public MessageType MessageType { get; set; }
-        public int Time { get; set; }
+        public int Duration { get; set; }
         public string Token { get; set; }
     }
 

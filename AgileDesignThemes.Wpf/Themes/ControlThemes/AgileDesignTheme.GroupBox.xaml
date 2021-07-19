@@ -35,7 +35,7 @@
                                         DockPanel.Dock="Top"
                                         CornerRadius="{Binding ElementName=CardBg,Path=CornerRadius,Converter={StaticResource GroupBoxHeaderCornerRadiusConverter}}"
                                         Background="{DynamicResource PrimaryHueMidBrush}">
-                                <ContentPresenter ContentSource="Header" 
+                                <ContentPresenter ContentSource="Header"
                                                   RecognizesAccessKey="True"
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"

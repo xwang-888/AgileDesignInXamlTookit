@@ -61,7 +61,7 @@ namespace AgileDesignThemes.Wpf.Helper
         {
             if (!(potentialHitTestTarget is Visual)) return HitTestFilterBehavior.ContinueSkipSelfAndChildren;
 
-            if (!(potentialHitTestTarget is UIElement uIElement) || uIElement.IsVisible && uIElement.IsEnabled)
+            if (potentialHitTestTarget is not UIElement uIElement || uIElement.IsVisible && uIElement.IsEnabled)
                 return HitTestFilterBehavior.Continue;
 
             return HitTestFilterBehavior.ContinueSkipSelfAndChildren;

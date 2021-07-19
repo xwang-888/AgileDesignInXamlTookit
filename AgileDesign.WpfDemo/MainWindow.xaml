@@ -7,55 +7,50 @@
     xmlns:local="clr-namespace:AgileDesign.WpfDemo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
+    xmlns:controls="clr-namespace:AgileDesignThemes.Wpf.Controls;assembly=AgileDesignThemes.Wpf"
     Title="AgileDesignDemo"
     TextElement.Foreground="{DynamicResource AgileDesignBody}"
     Background="{DynamicResource AgileDesignPaper}"
     WindowStartupLocation="CenterScreen"
-    Width="1250"
+    Width="1210"
     Height="600"
     mc:Ignorable="d">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <wpf:DrawerMenu
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <wpf:DrawerMenu
             Grid.Row="0"
             Grid.RowSpan="2"
             DisplayModel="CompactOverlay"
             IsOpen="{Binding ElementName=Button,Path=IsChecked}"
             HorizontalAlignment="Left"
             Background="#001529">
-            <StackPanel>
-                <Border Background="#4D5C6A" Margin="20" Height="30" >
-                    <TextBlock Text="AgileDesign" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-                </Border>
-            <ListBox
+                    <ListBox
                     Background="#001529"
                     Foreground="White"
                     ItemContainerStyle="{StaticResource ListBoxItemMenuStyle}"
                     ItemsSource="{Binding MenuItemList}"
                     SelectedItem="{Binding SelectedMenuItem}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal"   Margin="2,0,0,0">
-                                <wpf:PackIcon VerticalAlignment="Center" Kind="{Binding Icon}" Width="20" Height="20"  />
-                                <TextBlock Text="{Binding Header}"  Margin="24,0,0,0"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </StackPanel>
-        </wpf:DrawerMenu>
-        <wpf:Card Grid.Column="1" Grid.Row="0"
-                Height="50"
-                Background="#FFFFFF">
-       
-            <Grid>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal"   Margin="2,0,0,0">
+                                    <wpf:PackIcon VerticalAlignment="Center" Kind="{Binding Icon}" Width="20" Height="20"  />
+                                    <TextBlock Text="{Binding Header}"  Margin="24,0,0,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+            </wpf:DrawerMenu>
+        <wpf:Card Grid.Column="1" 
+                  Grid.Row="0"
+                  Height="50">
+                <StackPanel Orientation="Horizontal">
                 <ToggleButton
                     Name="Button"
                     Width="24"
@@ -65,14 +60,14 @@
                     IsChecked="True"
                     HorizontalAlignment="Left"
                     BorderBrush="Transparent">
-                    <wpf:PackIcon VerticalAlignment="Center" Kind="Menu"/>
-                </ToggleButton>
-            </Grid>
-        </wpf:Card>
-        <ContentControl Grid.Row="1" 
+                        <wpf:PackIcon VerticalAlignment="Center" Kind="Menu"/>
+                    </ToggleButton>
+                </StackPanel>
+            </wpf:Card>
+            <ContentControl Grid.Row="1" 
                         Grid.Column="1"
                         Content="{Binding SelectedMenuItem.Content}" 
                         Margin="20"/>
 
-    </Grid>
+        </Grid>
 </Window>

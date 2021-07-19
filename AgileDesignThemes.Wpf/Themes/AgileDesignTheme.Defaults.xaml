@@ -16,6 +16,8 @@
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.CheckBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.RadioButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Message.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.ScrollViewer.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Lable.xaml" />
 
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type wpf:PackIcon}">
@@ -43,7 +45,16 @@
         </Setter>
     </Style>
 
-    <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="{x:Type Button}" />
+    <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="{x:Type Button}" >
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value=".7"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value=".9"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     <Style BasedOn="{StaticResource TextBoxBaseStyle}" TargetType="{x:Type TextBox}" />
     <Style BasedOn="{StaticResource ListBoxBaseStyle}" TargetType="{x:Type ListBox}" />
     <Style BasedOn="{StaticResource ProgressBarBaseStyle}" TargetType="{x:Type ProgressBar}" />

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AgileDesign.WpfDemo.Views.Window;
 using AgileDesignThemes.Wpf;
 using AgileDesignThemes.Wpf.Enums;
 
@@ -29,29 +30,29 @@ namespace AgileDesign.WpfDemo.Views.Controls
 
         private void OpenWindow_OnClick(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow(){Width = 500, Height = 500};
+            var main = new MessageWindow(){Width = 500, Height = 500};
+            main.Show();
+        }
+        private void OpenDialogWindow_OnClick(object sender, RoutedEventArgs e)
+        {
+            var main = new MessageWindow() { Width = 500, Height = 500 };
             main.ShowDialog();
-            //Message.Show(new MessageInfo(){Message = "This is a normal message.", MessageType =  MessageType.Info, Time = 3,Token = "Hello"});
         }
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            Message.Show(new MessageInfo() { Message = "This is a normal message.", MessageType = MessageType.Info, Time = 3, Token = "Hello" });
+            Message.Info("This is a normal message.");
         }
-
         private void ButtonBase1_OnClick(object sender, RoutedEventArgs e)
         {
-            Message.Show(new MessageInfo() { Message = "This is a Error Message.", MessageType = MessageType.Error, Time = 3, Token = "Hello" });
-
+            Message.Error("This is a Error message.");
         }
         private void ButtonBase2_OnClick(object sender, RoutedEventArgs e)
         {
-            Message.Show(new MessageInfo() { Message = "This is a Error Success.", MessageType = MessageType.Success, Time = 3, Token = "Hello" });
-
+            Message.Success("This is a Success message.");
         }
         private void ButtonBase3_OnClick(object sender, RoutedEventArgs e)
         {
-            Message.Show(new MessageInfo() { Message = "This is a Error Warning.", MessageType = MessageType.Warning, Time = 3, Token = "Hello" });
-
+            Message.Warning("This is a Warning message.");
         }
     }
 }
