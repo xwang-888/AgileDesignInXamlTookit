@@ -7,42 +7,128 @@
              xmlns:assist="clr-namespace:AgileDesignThemes.Wpf.Themes.Assist;assembly=AgileDesignThemes.Wpf" xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <GroupBox Header="ProgressBars"
-              Foreground="White"
-              BorderThickness="0"
+    <GroupBox BorderThickness="0"
               assist:ControlAssist.ShadowDepth="Depth3">
-       <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center">
+        <GroupBox.Header>
+            <TextBlock Text="ProgressBar" Foreground="White"/>
+        </GroupBox.Header>
+        <wpf:ScrollViewer IsInertiaEnabled="True">
+            <StackPanel>
+                <StackPanel>
+                    <!--#region PromptText -->
+                    <TextBlock Text="Progress进度条"
+                          FontWeight="Black"
+                          FontSize="20"
+                          Margin="10 10 0 5"/>
+                    <TextBlock Text="展示操作的当前进度。"
+                          FontSize="13"
+                          Margin="10 0 0 5"/>
+                    <TextBlock Text="什么时候使用" 
+                          FontSize="20" 
+                          Margin="10 10 0 5"/>
+                    <TextBlock Text="○ 在操作需要较长时间才能完成时，为用户显示该操作的当前进度和状态。" 
+                          FontSize="13"
+                          Margin="10 0 0 5"/>
+                    <TextBlock Text="○ 当需要显示一个操作正在进行的百分比时。" 
+                          FontSize="13"
+                          Margin="10 0 0 5"/>
+                    <!--#endregion-->
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                   <UniformGrid Columns="2">
+                       <Label Content="标准的进度条。" Style="{StaticResource AgileDesignPrimaryLabel}"/>
+                       <Label Content="圆形的进度条。" Style="{StaticResource AgileDesignPrimaryLabel}"/>
+                    </UniformGrid>
+                    <UniformGrid Columns="2">
+                        <Border Padding="10" 
+                                CornerRadius="10"
+                                BorderBrush="#dddddd" 
+                                BorderThickness="1" 
+                                Margin="5 10 10 10">
+                           <WrapPanel>
+                               <WrapPanel Orientation="Vertical">
+                                   <ProgressBar Width="250" Height="8"  IsIndeterminate="True"  />
+                                   <ProgressBar Value="30" 
+                                                Margin="0 10 0 0" 
+                                                assist:ProgressAssist.IndicatorValueVisible="True"/>
+                                   <ProgressBar Value="50"
+                                                Foreground="{StaticResource SuccessColor}"
+                                                Margin="0 10 0 0"
+                                                assist:ProgressAssist.IndicatorValueVisible="True"/>
+                                   <ProgressBar Value="70"
+                                                Foreground="{StaticResource WarningColor}"
+                                                Margin="0 10 0 0"
+                                                assist:ProgressAssist.IndicatorValueVisible="True"/>
+                                   <ProgressBar Value="90"
+                                                Foreground="{StaticResource ErrorColor}"
+                                                Margin="0 10 0 0"
+                                                assist:ProgressAssist.IndicatorValueVisible="True"/>
+                                   <ProgressBar Value="60" Margin="0 10 0 0"/>
+                               </WrapPanel>
+                               <WrapPanel Orientation="Horizontal" 
+                                          HorizontalAlignment="Right" 
+                                          VerticalAlignment="Center">
+                                   <ProgressBar Height="120" Orientation="Vertical" IsIndeterminate="True"  Margin="10 0 0 0"/>
+                                   <ProgressBar Value="30" Margin="10 0 0 0" 
+                                                Orientation="Vertical" />
+                                   <ProgressBar Value="50" Margin="10 0 0 0" 
+                                                Foreground="{StaticResource SuccessColor}"
+                                                Orientation="Vertical"/>
+                                   <ProgressBar Value="70" 
+                                                Margin="10 0 0 0" 
+                                                Foreground="{StaticResource WarningColor}"
+                                                Orientation="Vertical"/>
+                                    <ProgressBar Value="90"
+                                                 Margin="10 0 0 0" 
+                                                 Foreground="{StaticResource ErrorColor}"
+                                                 Orientation="Vertical"/>
+                                    <ProgressBar Value="60" Margin="10 0 0 0" Orientation="Vertical"/>
+                               </WrapPanel>
+                            </WrapPanel>
+                        </Border>
 
-           <Border Width="300" Height="300" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1" Margin="10 0">
-               <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Vertical">
-                   <ProgressBar Width="250" Height="8"  IsIndeterminate="True"  Margin="0 10 0 0"/>
-                   <ProgressBar  Height="20" Value="20" Margin="0 10 0 0" assist:ControlAssist.CornerRadius="10"/>
-                   <ProgressBar  Height="20" Value="40" Margin="0 10 0 0"/>
-                   <ProgressBar  Height="20" Value="60" Margin="0 10 0 0"/>
-               </WrapPanel>
-           </Border>
-           <Border Width="300" Height="300" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1" Margin="10 0">
-               <WrapPanel>
-                   <ProgressBar Width="50" Height="50" IsIndeterminate="True"
-                                Style="{StaticResource CircularProgressBar}" Margin="10 10 0 0"/>
-                   <ProgressBar Width="50" Height="50" Value="20"
-                                Style="{StaticResource CircularProgressBar}" Margin="10 10 0 0"/>
-                   <ProgressBar Width="50" Height="50" Value="40"
-                                Style="{StaticResource CircularProgressBar}" Margin="10 10 0 0"/>
-                   <ProgressBar Width="50" Height="50" Value="60"
-                                Style="{StaticResource CircularProgressBar}" Margin="10 10 0 0"/>
-               </WrapPanel>
-           </Border>
-           <Border Width="300" Height="300" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1">
-               <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                   <ProgressBar Width="8" Height="250" Orientation="Vertical" IsIndeterminate="True"  Margin="10 0 0 0"/>
-                   <ProgressBar Value="20" Margin="10 0 0 0"  Orientation="Vertical" />
-                   <ProgressBar Value="40" Margin="10 0 0 0" Orientation="Vertical"/>
-                   <ProgressBar Value="60" Margin="10 0 0 0" Orientation="Vertical"/>
-               </WrapPanel>
-           </Border>
+                        <Border Padding="10" 
+                                CornerRadius="10"
+                                BorderBrush="#dddddd" 
+                                BorderThickness="1" 
+                                Margin="5 10 10 10">
+                            <WrapPanel VerticalAlignment="Center">
+                                <ProgressBar Width="50" Height="50" IsIndeterminate="True"
+                                             Style="{StaticResource CircularProgressBar}" 
+                                             assist:ProgressAssist.IndicatorValueVisible="True"
+                                             Margin="10 10 0 0"/>
+                                <ProgressBar Width="50" Height="50" Value="30"
+                                             Style="{StaticResource CircularProgressBar}" 
+                                             assist:ProgressAssist.IndicatorValueVisible="True"
+                                             Margin="10 10 0 0"/>
+                                <ProgressBar Width="50" Height="50" Value="50"
+                                             Foreground="{StaticResource SuccessColor}"
+                                             Style="{StaticResource CircularProgressBar}"
+                                             assist:ProgressAssist.IndicatorValueVisible="True"
+                                             Margin="10 10 0 0"/>
+                                <ProgressBar Width="50" Height="50" Value="70"
+                                             Foreground="{StaticResource WarningColor}"
+                                             Style="{StaticResource CircularProgressBar}"
+                                             assist:ProgressAssist.IndicatorValueVisible="True"
+                                             Margin="10 10 0 0"/>
+                                <ProgressBar Width="50" Height="50" Value="90"
+                                             Foreground="{StaticResource ErrorColor}"
+                                             Style="{StaticResource CircularProgressBar}"
+                                             assist:ProgressAssist.IndicatorValueVisible="True"
+                                             Margin="10 10 0 0"/>
+                                <ProgressBar Width="50" Height="50" Value="60"
+                                             Style="{StaticResource CircularProgressBar}"
+                                             Margin="10 10 0 0"/>
+                            </WrapPanel>
+                        </Border>
+                    </UniformGrid>
+                    <Border  Padding="10" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1">
+                       
+                    </Border>
 
 
-       </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </wpf:ScrollViewer>
     </GroupBox>
 </UserControl>

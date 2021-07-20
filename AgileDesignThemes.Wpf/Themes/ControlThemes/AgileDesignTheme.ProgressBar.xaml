@@ -51,6 +51,13 @@
                             </Grid.RenderTransform>
                         </Grid>
                         <Grid x:Name="PathGrid" Margin="2" />
+                        <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent},
+                            Path=Value,StringFormat={}{0}%}" 
+                                   FontSize="{TemplateBinding FontSize}"
+                                   HorizontalAlignment="Center" 
+                                   Name="ValueText"
+                                   Visibility="Collapsed"
+                                   VerticalAlignment="Center"/>
                         <Canvas>
                             <Ellipse StrokeThickness="3" Stroke="{TemplateBinding Background}"  Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"/>
                             <Path x:Name="Path" Stroke="{TemplateBinding Foreground}" StrokeThickness="2" 
@@ -99,8 +106,12 @@
                         </Canvas>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="assist:ProgressAssist.IndicatorValueVisible" Value="True">
+                            <Setter TargetName="ValueText" Property="Visibility" Value="Visible"/>
+                        </Trigger>
                         <Trigger Property="IsIndeterminate" Value="True">
                             <Setter Property="Background" Value="Transparent"/>
+                            <Setter TargetName="ValueText" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
@@ -137,7 +148,8 @@
     </Style>
 
     <Style x:Key="ProgressBarBaseStyle" TargetType="{x:Type ProgressBar}">
-        <Setter Property="Height" Value="20"/>
+        <Setter Property="Height" Value="10"/>
+        <Setter Property="MinWidth" Value="10"/>
         <Setter Property="Background" Value="#f5f5f5"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="BorderBrush" Value="#19000000"/>
@@ -161,27 +173,48 @@
                             </PointAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
-                    <Border x:Name="TemplateRoot" ClipToBounds="True" CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
-                        <Grid ClipToBounds="True">
-                            <Rectangle x:Name="PART_Track"/>
-                            <Border  CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" x:Name="PART_Indicator" HorizontalAlignment="Left">
-                                <Grid   ClipToBounds="True">
-                                    <Border x:Name="Indicator" Background="{TemplateBinding Foreground}" CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" >
-                                    </Border>
-                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" Text="{Binding Path=Value,StringFormat={}{0}%,RelativeSource={RelativeSource TemplatedParent}}"  Name="ValueText"/>
-                                    <Rectangle x:Name="PART_GlowRect" Fill="{StaticResource ProgressBarIndicatorAnimatedFill}" HorizontalAlignment="Left" Margin="-100,0,0,0" Width="100" />
-                                    <Rectangle x:Name="Animation" Visibility="Collapsed" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5">
-                                        <Rectangle.RenderTransform>
-                                            <TransformGroup>
-                                                <ScaleTransform />
-                                            </TransformGroup>
-                                        </Rectangle.RenderTransform>
-                                    </Rectangle>
-                                </Grid>
-                            </Border>
-                        </Grid>
-                    </Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="TemplateRoot" 
+                            ClipToBounds="True"
+                            CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="#f7f7f7">
+                            <Grid ClipToBounds="True">
+                                <Rectangle x:Name="PART_Track"/>
+                                <Border 
+                                CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" 
+                                     x:Name="PART_Indicator" 
+                                     HorizontalAlignment="Left">
+                                    <Grid   ClipToBounds="True">
+                                        <Border x:Name="Indicator" Background="{TemplateBinding Foreground}" CornerRadius="{Binding Path=(assist:ControlAssist.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" >
+                                        </Border>
+                                        <Rectangle x:Name="PART_GlowRect" Fill="{StaticResource ProgressBarIndicatorAnimatedFill}" HorizontalAlignment="Left" Margin="-100,0,0,0" Width="100" />
+                                        <Rectangle x:Name="Animation" Visibility="Collapsed" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5">
+                                            <Rectangle.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform />
+                                                </TransformGroup>
+                                            </Rectangle.RenderTransform>
+                                        </Rectangle>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Border>
+                        <TextBlock 
+                            Grid.Column="1"
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            Visibility="Collapsed"
+                            Margin="5 0 0 0"
+                            Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}" 
+                            Text="{Binding Path=Value,StringFormat={}{0}%,RelativeSource={RelativeSource TemplatedParent}}"  Name="ValueText"/>
+                    </Grid>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="assist:ProgressAssist.IndicatorValueVisible" Value="True">
+                            <Setter TargetName="ValueText" Property="Visibility" Value="Visible"/>
+                        </Trigger>
                         <Trigger Property="Orientation" Value="Vertical">
                             <Setter Property="Height" Value="{x:Static system:Double.NaN}" />
                             <Setter Property="LayoutTransform" TargetName="TemplateRoot">

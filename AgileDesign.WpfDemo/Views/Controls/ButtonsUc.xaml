@@ -16,6 +16,23 @@
             </GroupBox.Header>
             <wpf:ScrollViewer IsInertiaEnabled="True">
                 <StackPanel Margin="0" >
+                    <StackPanel>
+                        <!--#region PromptText -->
+                        <TextBlock Text="Button按钮"
+                                   FontWeight="Black"
+                                   FontSize="20"
+                                   Margin="10 10 0 5"/>
+                        <TextBlock Text="按钮用于开始一个即时操作。"
+                                   FontSize="13"
+                                   Margin="10 0 0 5"/>
+                        <TextBlock Text="什么时候使用" 
+                                   FontSize="20" 
+                                   Margin="10 10 0 5"/>
+                        <TextBlock Text="○ 标记了操作命令，响应用户点击行为，触发相应的业务逻辑。" 
+                                   FontSize="13"
+                                   Margin="10 0 0 5"/>
+                        <!--#endregion-->
+                    </StackPanel>
                     <Label  Content="常用的几种按钮"
                             FontSize="15" 
                             Margin="0 0 0 10" 
@@ -51,82 +68,71 @@
                             Style="{StaticResource AgileDesignWarningButton}"
                             Content="Warning Button" />
                     </WrapPanel>
-                    <Label  Content="可以是圆角按钮"
-                            FontSize="15" 
-                            Margin="0 10" 
-                            Style="{StaticResource AgileDesignPrimaryLabel}"/>
-                    <WrapPanel>
-                        <Button  
+                  <UniformGrid Columns="2">
+                      <Label  Content="可以是圆角按钮"
+                              FontSize="15" 
+                              Margin="0 10" 
+                              Style="{StaticResource AgileDesignPrimaryLabel}"/>
+                      <Label  Content="还可以是带有图标的按钮"
+                              FontSize="15" 
+                              Margin="0 10 0 10" 
+                              Style="{StaticResource AgileDesignPrimaryLabel}"/>
+                    </UniformGrid>
+                   <UniformGrid Columns="2">
+                        <WrapPanel>
+                            <Button  
                             assist:ControlAssist.CornerRadius="15"
                             Click="ButtonBase2_OnClick"
                             Content="Primary Button" />
-                        <Button
+                            <Button
                             assist:ControlAssist.CornerRadius="15"
                             Margin="20 0 0 0"
                             Click="ButtonBase_OnClick" 
                             Style="{StaticResource AgileDesignDefaultButton}"
                             Content="Empty Button" />
-                        <Button
+                            <Button
                             assist:ControlAssist.CornerRadius="15"
                             Margin="20 0 0 0"
                             IsEnabled="False"
                             Content="Disabled Button" />
-                        <Button
-                            assist:ControlAssist.CornerRadius="15"
-                            Margin="20 0 0 0"
-                            Style="{StaticResource AgileDesignSuccessButton}"
-                            Content="Success Button" />
-                        <Button
-                            assist:ControlAssist.CornerRadius="15"
-                            Margin="20 0 0 0"
-                            Style="{StaticResource AgileDesignErrorButton}"
-                            Content="Error Button" />
-                        <Button
-                            assist:ControlAssist.CornerRadius="15"
-                            Margin="20 0 0 0"
-                            Style="{StaticResource AgileDesignWarningButton}"
-                            Content="Warning Button" />
-                    </WrapPanel>
-                    <Label  Content="还可以是带有图标的按钮"
-                            FontSize="15" 
-                            Margin="0 10 0 10" 
-                            Style="{StaticResource AgileDesignPrimaryLabel}"/>
-                    <WrapPanel>
-                        <Button
+                        </WrapPanel>
+                        <WrapPanel>
+                            <Button
                         Margin="0 0 0 0"
                         Click="ButtonBase_OnClick2" >
-                            <StackPanel Orientation="Horizontal">
-                                <wpf:PackIcon Kind="Account"  VerticalAlignment="Center"/>
-                                <TextBlock Text="Icon Button"/>
-                            </StackPanel>
-                        </Button>
-                        <Button
+                                <StackPanel Orientation="Horizontal">
+                                    <wpf:PackIcon Kind="Account"  VerticalAlignment="Center"/>
+                                    <TextBlock Text="Icon Button"/>
+                                </StackPanel>
+                            </Button>
+                            <Button
                         assist:ControlAssist.CornerRadius="50"
                         Width="32"
                         Padding="0"
                         Margin="20 0 0 0"
                         Click="ButtonBase_OnClick2" >
-                            <wpf:PackIcon Kind="AccountEdit"  VerticalAlignment="Center"/>
-                        </Button>
-                        <Button
+                                <wpf:PackIcon Kind="AccountEdit"  VerticalAlignment="Center"/>
+                            </Button>
+                            <Button
                         Style="{StaticResource AgileDesignDefaultButton}"
                         Margin="20 0 0 0"
                         Click="ButtonBase_OnClick2" >
-                            <StackPanel Orientation="Horizontal">
-                                <wpf:PackIcon Kind="Account"  VerticalAlignment="Center"/>
-                                <TextBlock Text="Icon Button"/>
-                            </StackPanel>
-                        </Button>
-                        <Button
+                                <StackPanel Orientation="Horizontal">
+                                    <wpf:PackIcon Kind="Account"  VerticalAlignment="Center"/>
+                                    <TextBlock Text="Icon Button"/>
+                                </StackPanel>
+                            </Button>
+                            <Button
                         Style="{StaticResource AgileDesignDefaultButton}"
                         assist:ControlAssist.CornerRadius="50"
                         Width="32"
                         Padding="0"
                         Margin="20 0 0 0"
                         Click="ButtonBase_OnClick2" >
-                            <wpf:PackIcon Kind="AccountEdit"  VerticalAlignment="Center"/>
-                        </Button>
-                    </WrapPanel>
+                                <wpf:PackIcon Kind="AccountEdit"  VerticalAlignment="Center"/>
+                            </Button>
+                        </WrapPanel>
+                    </UniformGrid>
                     <Label  Content="扩展为带有进度的按钮"
                             FontSize="15" 
                             Margin="0 10 1 10" 
@@ -154,6 +160,7 @@
                                 Value="50" Maximum="100" 
                                 VerticalAlignment="Center"
                                 Margin="10 0 0 0"/>
+                        <TextBlock Text="拖动改变按钮进度" VerticalAlignment="Center" Margin="10 0 0 0"/>
                     </WrapPanel>
                     <Label  Content="扩展为带有徽标的按钮"
                             FontSize="15" 

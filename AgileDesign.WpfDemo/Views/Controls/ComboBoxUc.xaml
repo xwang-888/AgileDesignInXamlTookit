@@ -1,0 +1,159 @@
+﻿<UserControl x:Class="AgileDesign.WpfDemo.Views.Controls.ComboBoxUc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AgileDesign.WpfDemo.Views.Controls"
+             xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
+             xmlns:assist="clr-namespace:AgileDesignThemes.Wpf.Themes.Assist;assembly=AgileDesignThemes.Wpf"
+             xmlns:converters="clr-namespace:AgileDesignThemes.Wpf.Converters;assembly=AgileDesignThemes.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Grid>
+      <GroupBox BorderThickness="0"
+                assist:ControlAssist.ShadowDepth="Depth3">
+            <GroupBox.Header>
+                <TextBlock Text="ComboBox" Foreground="White"/>
+            </GroupBox.Header>
+          <StackPanel>
+              <StackPanel>
+                        <!--#region PromptText -->
+                        <TextBlock Text="ComboBox选择器"
+                                       FontWeight="Black"
+                                       FontSize="20"
+                                       Margin="10 10 0 5"/>
+                        <TextBlock Text="下拉菜单列表。"
+                                       FontSize="13"
+                                       Margin="10 0 0 5"/>
+                        <TextBlock Text="什么时候使用" 
+                                       FontSize="20" 
+                                       Margin="10 10 0 5"/>
+                        <TextBlock Text="○ 弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，或者需要一个更优雅的多选器时。" 
+                                       FontSize="13"
+                                       Margin="10 0 0 5"/>
+                        <TextBlock Text="○ 当选项少时（少于 5 项），建议直接将选项平铺，使用 RadioButton 是更好的选择。" 
+                                       FontSize="13"
+                                       Margin="10 0 0 5"/>
+                        <!--#endregion-->
+                        <Label Style="{StaticResource  AgileDesignPrimaryLabel}" 
+                               FontSize="13"
+                               Content="单选择器示例 ↓"/>
+                        <wpf:Card
+                            Margin="5 10"
+                            Padding="10"
+                            CornerRadius="3"
+                            ShadowDepth="Depth1">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <ComboBox Height="30" Width="200" 
+                                          assist:ControlAssist.HintText="Default ComboBox">
+                                        <ComboBoxItem Content="C#"/>
+                                        <ComboBoxItem Content="C"/>
+                                        <ComboBoxItem Content="C++"/>
+                                        <ComboBoxItem Content="VB"/>
+                                        <ComboBoxItem Content="Java"/>
+                                        <ComboBoxItem Content="Java Script"/>
+                                        <ComboBoxItem Content="Unity"/>
+                                        <ComboBoxItem Content="Python"/>
+                                        <ComboBoxItem Content="Go"/>
+                                        <ComboBoxItem Content="VUE"/>
+                                        <ComboBoxItem Content="ASP.NET"/>
+                                        <ComboBoxItem Content="Console"/>
+                                    </ComboBox>
+                                    <ComboBox Height="30" 
+                                          Width="200" 
+                                          Margin="20 0 0 0"
+                                          IsEditable="True"
+                                          assist:ControlAssist.HintText="Editable ComboBox">
+                                        <ComboBoxItem Content="C#"/>
+                                        <ComboBoxItem Content="C"/>
+                                        <ComboBoxItem Content="C++"/>
+                                        <ComboBoxItem Content="VB"/>
+                                        <ComboBoxItem Content="Java"/>
+                                        <ComboBoxItem Content="Java Script"/>
+                                        <ComboBoxItem Content="Unity"/>
+                                        <ComboBoxItem Content="Python"/>
+                                        <ComboBoxItem Content="Go"/>
+                                        <ComboBoxItem Content="VUE"/>
+                                        <ComboBoxItem Content="ASP.NET"/>
+                                        <ComboBoxItem Content="Console"/>
+                                    </ComboBox>
+                                </StackPanel>
+                                <StackPanel  Orientation="Horizontal" Margin="0 20 0 0">
+                                    <ComboBox Height="30" 
+                                          Width="200" 
+                                          Margin="0 0 0 0"
+                                          BorderThickness="0 0 0 1"
+                                          assist:ControlAssist.HintText="Single Border">
+                                        <ComboBoxItem Content="C#"/>
+                                        <ComboBoxItem Content="C"/>
+                                        <ComboBoxItem Content="C++"/>
+                                        <ComboBoxItem Content="VB"/>
+                                        <ComboBoxItem Content="Java"/>
+                                        <ComboBoxItem Content="Java Script"/>
+                                        <ComboBoxItem Content="Unity"/>
+                                        <ComboBoxItem Content="Python"/>
+                                        <ComboBoxItem Content="Go"/>
+                                        <ComboBoxItem Content="VUE"/>
+                                        <ComboBoxItem Content="ASP.NET"/>
+                                        <ComboBoxItem Content="Console"/>
+                                    </ComboBox>
+                                    <ComboBox Height="30" 
+                                          Width="200" 
+                                          IsEditable="True"
+                                          Margin="20 0 0 0"
+                                          BorderThickness="0 0 0 1"
+                                          assist:ControlAssist.HintText="Editable Single Border">
+                                        <ComboBoxItem Content="C#"/>
+                                        <ComboBoxItem Content="C"/>
+                                        <ComboBoxItem Content="C++"/>
+                                        <ComboBoxItem Content="VB"/>
+                                        <ComboBoxItem Content="Java"/>
+                                        <ComboBoxItem Content="Java Script"/>
+                                        <ComboBoxItem Content="Unity"/>
+                                        <ComboBoxItem Content="Python"/>
+                                        <ComboBoxItem Content="Go"/>
+                                        <ComboBoxItem Content="VUE"/>
+                                        <ComboBoxItem Content="ASP.NET"/>
+                                        <ComboBoxItem Content="Console"/>
+                                    </ComboBox>
+                                </StackPanel>
+                               <StackPanel Margin="0 20 0 0" Orientation="Horizontal">
+                                   <ComboBox Height="30" Width="200" 
+                                             HorizontalAlignment="Left"
+                                             assist:ControlAssist.CornerRadius="{Binding ElementName=Slider,Path=Value}"
+                                             assist:ControlAssist.HintText="CornerRadius">
+                                       <ComboBoxItem Content="C#"/>
+                                       <ComboBoxItem Content="C"/>
+                                       <ComboBoxItem Content="C++"/>
+                                       <ComboBoxItem Content="VB"/>
+                                       <ComboBoxItem Content="Java"/>
+                                       <ComboBoxItem Content="Java Script"/>
+                                       <ComboBoxItem Content="Unity"/>
+                                       <ComboBoxItem Content="Python"/>
+                                       <ComboBoxItem Content="Go"/>
+                                       <ComboBoxItem Content="VUE"/>
+                                       <ComboBoxItem Content="ASP.NET"/>
+                                       <ComboBoxItem Content="Console"/>
+                                   </ComboBox>
+                                   <Slider Name="Slider" 
+                                           Maximum="15"
+                                           Minimum="0"
+                                           Value="15"
+                                           VerticalAlignment="Center"
+                                           Margin="20 0 0 0"
+                                           Width="100"/>
+                                   <TextBlock Text="拖动改变圆角" VerticalAlignment="Center" Margin="10 0 0 0"/>
+                            </StackPanel>
+                            </StackPanel>
+                        </wpf:Card>
+                        <Label Style="{StaticResource  AgileDesignPrimaryLabel}"
+                               FontSize="13"
+                               Content="多选择器示例  ↓"/>
+                    </StackPanel>
+            </StackPanel>
+        </GroupBox>
+</Grid>
+</UserControl>

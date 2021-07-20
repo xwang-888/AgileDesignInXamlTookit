@@ -9,24 +9,49 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <GroupBox Header="Text Boxs"
-                  Foreground="White"
-                  BorderThickness="0"
+        <GroupBox BorderThickness="0"
                   assist:ControlAssist.ShadowDepth="Depth3">
-            <wpf:Card Width="300" Height="300"
-                      CornerRadius="10"
-                      ShadowDepth="Depth4"
-                      Margin="0 0 10 0">
-                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-                    <TextBox Width="250"/>
-                    <TextBox Width="250" assist:ControlAssist.HintText="提示文字"  Margin="0 20 0 0"/>
-                    <TextBox Width="250"
-                         assist:ControlAssist.HintText="请输入账号" 
-                         assist:ControlAssist.IconGeometry="{wpf:PackIconDataMarkup Account}" 
-                         Margin="0 20 0 0"/>
-                </WrapPanel>
-            </wpf:Card>
+                <GroupBox.Header>
+                <TextBlock Text="Text Box" Foreground="White"/>
+                </GroupBox.Header>
+            <StackPanel>
+              <StackPanel>
+                  <!--#region PromptText -->
+                    <TextBlock Text="TextBox输入框"
+                             FontWeight="Black"
+                             FontSize="20"
+                             Margin="10 10 0 5"/>
+                    <TextBlock Text="通过鼠标或键盘输入内容，是最基础的表单元素。"
+                             FontSize="13"
+                             Margin="10 0 0 5"/>
+                  <TextBlock Text="什么时候使用" 
+                             FontSize="20" 
+                             Margin="10 10 0 5"/>
+                    <TextBlock Text="○ 需要用户输入表单内容时。" 
+                             FontSize="13"
+                             Margin="10 0 0 5"/>
+                    <TextBlock Text="○ 提供图标型输入框，水印形输入框，带搜索的输入框，带清空的输入框。" 
+                             FontSize="13"
+                             Margin="10 0 0 5"/>
+                  <!--#endregion-->
+                </StackPanel>
+              <Label Content="常用输入框" Style="{StaticResource AgileDesignPrimaryLabel}"/>
+              <wpf:Card CornerRadius="3"
+                        ShadowDepth="Depth2"
+                        Padding="10"
+                        Margin="5 10 0 10">
+                  <WrapPanel>
+                      <TextBox Width="200"/>
+                      <TextBox Width="200" assist:ControlAssist.HintText="提示文字"  Margin="20 0 0 0"/>
+                      <TextBox Width="200"
+                               assist:ControlAssist.HintText="请输入账号" 
+                               assist:ControlAssist.IconGeometry="{wpf:PackIconDataMarkup Account}" 
+                               Margin="20 0 0 0"/>
+                  </WrapPanel>
+              </wpf:Card>
+              <Label Content="功能性输入框（带搜索、带清空）" 
+                     Style="{StaticResource AgileDesignPrimaryLabel}"/>
+          </StackPanel>
         </GroupBox>
     </Grid>
 </UserControl>

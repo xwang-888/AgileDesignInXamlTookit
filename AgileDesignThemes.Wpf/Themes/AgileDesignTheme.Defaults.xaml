@@ -18,6 +18,8 @@
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Message.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.ScrollViewer.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Lable.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Slider.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.ComboBox.xaml" />
 
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type wpf:PackIcon}">
@@ -61,6 +63,7 @@
     <Style BasedOn="{StaticResource ToggleSwitchBaseStyle}" TargetType="{x:Type ToggleButton}" />
     <Style BasedOn="{StaticResource GroupBoxBaseStyle}" TargetType="{x:Type GroupBox}"/>
     <Style BasedOn="{StaticResource CheckBoxBaseStyle}" TargetType="{x:Type CheckBox}"/>
+    <Style BasedOn="{StaticResource ComboBoxBaseStyle}" TargetType="{x:Type ComboBox}"/>
 
 
 </ResourceDictionary>
