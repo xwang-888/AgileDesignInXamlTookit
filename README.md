@@ -1,7 +1,17 @@
 # AgileDesign
 帮助您快速开发的WPF UI控件库
 正在加速建造中......
-![image](https://user-images.githubusercontent.com/56998197/126249674-f2f9fbd3-9f36-4393-896e-6672fe15a698.png)
-![image](https://user-images.githubusercontent.com/56998197/126249764-8b0c1f23-2b87-4deb-a38f-4c4bf6f95868.png)
+![image](https://user-images.githubusercontent.com/56998197/126293140-649ff57e-dbf5-4824-9e42-816f2b393d2d.png)
+![image](https://user-images.githubusercontent.com/56998197/126293175-c729c65d-d162-4ebf-886d-320650385d75.png)
+![image](https://user-images.githubusercontent.com/56998197/126293314-7d05edb3-f82c-4490-9df3-0e0f5ae9d395.png)
+![image](https://user-images.githubusercontent.com/56998197/126293368-68631893-8870-4336-9b52-68ce4e278833.png)
+![image](https://user-images.githubusercontent.com/56998197/126293387-c090e550-5237-4c78-91a0-5eef9dc08015.png)
+![image](https://user-images.githubusercontent.com/56998197/126293415-b8d560e4-32ec-4b82-a835-0b1b52841ea1.png)
+![image](https://user-images.githubusercontent.com/56998197/126293428-bdc6c777-28d1-421b-82da-ab6597609f67.png)
+![image](https://user-images.githubusercontent.com/56998197/126293444-b0f9737b-8225-4850-8b14-43e809146f47.png)
+![image](https://user-images.githubusercontent.com/56998197/126293468-d1cfd64a-fcb7-42e6-a0f6-ece6cc23156e.png)
+![image](https://user-images.githubusercontent.com/56998197/126293485-4b40a0bd-c35d-4e80-9918-d3c127019174.png)
+
+
 
 
