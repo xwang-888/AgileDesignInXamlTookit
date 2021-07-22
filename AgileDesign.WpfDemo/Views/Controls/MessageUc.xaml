@@ -43,23 +43,23 @@
                             <TextBlock Text="组件提供了一些静态方法，使用方式和参数如下：" 
                                        FontSize="13"
                                        Margin="10 0 0 5"/>
-                            <Label Content="Message.Info(string content,int duration=3)" 
+                            <Label Content="Message.Info(string content,int duration=3,string token=null)" 
                                    FontSize="13"
                                    MinHeight="25"
                                    Background="{StaticResource InfoColor}"
                                    Style="{StaticResource AgileDesignPrimaryLabel}"
                                    Margin="10 0 0 3"/>
-                            <Label Content="Message.Success(string content,int duration=3)" 
+                            <Label Content="Message.Success(string content,int duration=3,string token=null)" 
                                    FontSize="13"
                                    MinHeight="25"
                                    Style="{StaticResource AgileDesignSuccessLabel}"
                                    Margin="10 0 0 3"/>
-                            <Label Content="Message.Warning(string content,int duration=3)" 
+                            <Label Content="Message.Warning(string content,int duration=3,string token=null)" 
                                    FontSize="13"
                                    MinHeight="25"
                                    Style="{StaticResource AgileDesignWarningLabel}"
                                    Margin="10 0 0 3"/>
-                            <Label Content="Message.Error(string content,int duration=3)" 
+                            <Label Content="Message.Error(string content,int duration=3,string token=null)" 
                                    FontSize="13"
                                    MinHeight="25"
                                    Style="{StaticResource AgileDesignErrorLabel}"
@@ -75,24 +75,24 @@
                   <WrapPanel HorizontalAlignment="Center"
                              VerticalAlignment="Center">
                       <TextBlock Text="示例：" FontSize="15" VerticalAlignment="Center"/>
-                      <Button Click="OpenWindow_OnClick" 
+                      <Button Command="{Binding OpenWindowCommand}" 
                               Content="Open Window"
                               Style="{StaticResource AgileDesignDefaultButton}"/>
-                      <Button Click="OpenDialogWindow_OnClick" 
+                      <Button Command="{Binding OpenDialogWindowCommand}" 
                               Content="Open DialogWindow"
                               Margin="10 0 0 0"
                               Style="{StaticResource AgileDesignDefaultButton}"/>
-                      <Button Click="ButtonBase_OnClick" Content="Normal" 
+                      <Button Command="{Binding InfoCommand}"  Content="Normal" 
                               Margin="10 0 0 0"/>
-                      <Button Click="ButtonBase1_OnClick" Content="Error" 
+                      <Button Command="{Binding ErrorCommand}"  Content="Error" 
                               Margin="10 0 0 0"
                               Background="{StaticResource ErrorColor}" 
                               BorderBrush="{StaticResource ErrorColor}"/>
-                      <Button Click="ButtonBase2_OnClick" Content="Success" 
+                      <Button Command="{Binding SuccessCommand}"  Content="Success" 
                               Margin="10 0 0 0"
                               Background="{StaticResource SuccessColor}" 
                               BorderBrush="{StaticResource SuccessColor}"/>
-                      <Button Click="ButtonBase3_OnClick" Content="Warning" 
+                      <Button Command="{Binding WarningCommand}"  Content="Warning" 
                               Margin="10 0 0 0"
                               Background="{StaticResource WarningColor}" 
                               BorderBrush="{StaticResource WarningColor}"/>

@@ -32,21 +32,21 @@
                         VerticalAlignment="Bottom">
                   <WrapPanel>
                       <TextBlock Text="示例：" FontSize="15" VerticalAlignment="Center"/>
-                      <Button Click="ButtonBase_OnClick" Content="Normal" Margin="10 0 0 0"/>
-
-                      <Button Click="ButtonBase1_OnClick" Content="Error" 
+                      <Button Command="{Binding InfoCommand}"  Content="Normal" 
+                              Margin="10 0 0 0"/>
+                      <Button Command="{Binding ErrorCommand}"  Content="Error" 
                               Margin="10 0 0 0"
                               Background="{StaticResource ErrorColor}" 
                               BorderBrush="{StaticResource ErrorColor}"/>
-                      <Button Click="ButtonBase2_OnClick" Content="Success" 
+                      <Button Command="{Binding SuccessCommand}"  Content="Success" 
                               Margin="10 0 0 0"
                               Background="{StaticResource SuccessColor}" 
                               BorderBrush="{StaticResource SuccessColor}"/>
-                      <Button Click="ButtonBase3_OnClick" Content="Warning" 
+                      <Button Command="{Binding WarningCommand}"  Content="Warning" 
                               Margin="10 0 0 0"
                               Background="{StaticResource WarningColor}" 
                               BorderBrush="{StaticResource WarningColor}"/>
-                  </WrapPanel>
+                    </WrapPanel>
               </wpf:Card>
           </Grid>
         </GroupBox>

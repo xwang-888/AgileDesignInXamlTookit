@@ -149,6 +149,7 @@
 
     <Style x:Key="ProgressBarBaseStyle" TargetType="{x:Type ProgressBar}">
         <Setter Property="Height" Value="10"/>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="MinWidth" Value="10"/>
         <Setter Property="Background" Value="#f5f5f5"/>
         <Setter Property="FontSize" Value="12"/>
