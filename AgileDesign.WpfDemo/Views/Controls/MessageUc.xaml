@@ -16,9 +16,8 @@
                 <TextBlock Text="Message" Foreground="White"/>
             </GroupBox.Header>
             <wpf:ScrollViewer IsInertiaEnabled="True">
-                <Label VerticalContentAlignment="Top">
-                    <Label.Content>
-                        <StackPanel>
+                <StackPanel>
+                    <StackPanel>
                             <!--#region PromptText -->
                             <TextBlock Text="Message全局提示"
                                        FontWeight="Black"
@@ -99,8 +98,7 @@
                   </WrapPanel>
               </wpf:Card>
                         </StackPanel>
-                    </Label.Content>
-                </Label>
+                </StackPanel>
           </wpf:ScrollViewer>
             
         </GroupBox>
