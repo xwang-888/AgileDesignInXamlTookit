@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:AgileDesign.WpfDemo.Views.Controls"
              xmlns:assist="clr-namespace:AgileDesignThemes.Wpf.Themes.Assist;assembly=AgileDesignThemes.Wpf" xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="1000" d:DesignWidth="1000">
     <GroupBox BorderThickness="0"
               assist:ControlAssist.ShadowDepth="Depth3">
         <GroupBox.Header>
@@ -35,9 +35,9 @@
                     <!--#endregion-->
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
-                   <UniformGrid Columns="2">
-                       <Label Content="标准的进度条。" Style="{StaticResource AgileDesignPrimaryLabel}"/>
-                       <Label Content="圆形的进度条。" Style="{StaticResource AgileDesignPrimaryLabel}"/>
+                    <UniformGrid Columns="2">
+                        <Label Content="标准的进度条。" Style="{StaticResource AgileDesignPrimaryLabel}"/>
+                        <Label Content="圆形的进度条。" Style="{StaticResource AgileDesignPrimaryLabel}"/>
                     </UniformGrid>
                     <UniformGrid Columns="2">
                         <Border Padding="10" 
@@ -45,36 +45,36 @@
                                 BorderBrush="#dddddd" 
                                 BorderThickness="1" 
                                 Margin="5 10 10 10">
-                           <WrapPanel>
-                               <WrapPanel Orientation="Vertical">
-                                   <ProgressBar Width="250" Height="8"  IsIndeterminate="True"  />
-                                   <ProgressBar Value="30" 
+                            <WrapPanel>
+                                <WrapPanel Orientation="Vertical">
+                                    <ProgressBar Width="250" Height="8"  IsIndeterminate="True"  />
+                                    <ProgressBar Value="30" 
                                                 Margin="0 10 0 0" 
                                                 assist:ProgressAssist.IndicatorValueVisible="True"/>
-                                   <ProgressBar Value="50"
+                                    <ProgressBar Value="50"
                                                 Foreground="{StaticResource SuccessColor}"
                                                 Margin="0 10 0 0"
                                                 assist:ProgressAssist.IndicatorValueVisible="True"/>
-                                   <ProgressBar Value="70"
+                                    <ProgressBar Value="70"
                                                 Foreground="{StaticResource WarningColor}"
                                                 Margin="0 10 0 0"
                                                 assist:ProgressAssist.IndicatorValueVisible="True"/>
-                                   <ProgressBar Value="90"
+                                    <ProgressBar Value="90"
                                                 Foreground="{StaticResource ErrorColor}"
                                                 Margin="0 10 0 0"
                                                 assist:ProgressAssist.IndicatorValueVisible="True"/>
-                                   <ProgressBar Value="60" Margin="0 10 0 0"/>
-                               </WrapPanel>
-                               <WrapPanel Orientation="Horizontal" 
+                                    <ProgressBar Value="60" Margin="0 10 0 0"/>
+                                </WrapPanel>
+                                <WrapPanel Orientation="Horizontal" 
                                           HorizontalAlignment="Right" 
                                           VerticalAlignment="Center">
-                                   <ProgressBar Height="120" Orientation="Vertical" IsIndeterminate="True"  Margin="10 0 0 0"/>
-                                   <ProgressBar Value="30" Margin="10 0 0 0" 
+                                    <ProgressBar Height="120" Orientation="Vertical" IsIndeterminate="True"  Margin="10 0 0 0"/>
+                                    <ProgressBar Value="30" Margin="10 0 0 0" 
                                                 Orientation="Vertical" />
-                                   <ProgressBar Value="50" Margin="10 0 0 0" 
+                                    <ProgressBar Value="50" Margin="10 0 0 0" 
                                                 Foreground="{StaticResource SuccessColor}"
                                                 Orientation="Vertical"/>
-                                   <ProgressBar Value="70" 
+                                    <ProgressBar Value="70" 
                                                 Margin="10 0 0 0" 
                                                 Foreground="{StaticResource WarningColor}"
                                                 Orientation="Vertical"/>
@@ -83,7 +83,7 @@
                                                  Foreground="{StaticResource ErrorColor}"
                                                  Orientation="Vertical"/>
                                     <ProgressBar Value="60" Margin="10 0 0 0" Orientation="Vertical"/>
-                               </WrapPanel>
+                                </WrapPanel>
                             </WrapPanel>
                         </Border>
 
@@ -122,11 +122,11 @@
                             </WrapPanel>
                         </Border>
                     </UniformGrid>
-                    <Border  Padding="10" CornerRadius="10" BorderBrush="#dddddd" BorderThickness="1">
-                       
-                    </Border>
-
-
+                    <ProgressBar  Padding="10" Value="{Binding ElementName=Slider,Path=Value}" Width="100" Height="100"  BorderBrush="#dddddd" BorderThickness="1" 
+                                  Style="{StaticResource WaveProgressBar}">
+                    </ProgressBar>
+                    <Slider Name="Slider" Value="50" Width="200" Maximum="100" AutoToolTipPlacement="BottomRight"/>
+                
                 </StackPanel>
             </StackPanel>
         </wpf:ScrollViewer>

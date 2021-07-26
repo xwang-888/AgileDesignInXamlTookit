@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AgileDesign.WpfDemo.Views.Controls"
              xmlns:assist="clr-namespace:AgileDesignThemes.Wpf.Themes.Assist;assembly=AgileDesignThemes.Wpf"
+             xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -13,22 +14,46 @@
         <GroupBox.Header>
             <TextBlock Text="Labels" Foreground="White"/>
         </GroupBox.Header>
-            <StackPanel Orientation="Vertical">
-                <Label Margin="10"
-                       Content="This is Default Label."/>
-                <Label Style="{StaticResource AgileDesignPrimaryLabel}"
-                       Margin="10"
-                       Content="This is Primary Label."/>
-                <Label Style="{StaticResource AgileDesignSuccessLabel}" 
-                       Margin="10"
-                       Content="This is Success Label."/>
-                <Label Style="{StaticResource AgileDesignErrorLabel}" 
-                       Margin="10"
-                       Content="This is Error Label."/>
-                <Label Style="{StaticResource AgileDesignWarningLabel}" 
-                       Margin="10"
-                       Content="This is Warning Label."/>
-            </StackPanel>
+           <wpf:ScrollViewer IsInertiaEnabled="True">
+               <StackPanel Orientation="Vertical">
+                   <!--#region PromptText -->
+                    <TextBlock Text="Label 文本标签"
+                              FontWeight="Black"
+                              FontSize="20"
+                              Margin="10 10 0 5"/>
+                   <TextBlock Text="文本标签。"
+                              FontSize="13"
+                              Margin="10 0 0 5"/>
+                   <TextBlock Text="什么时候使用" 
+                              FontSize="20" 
+                              Margin="10 10 0 5"/>
+                   <TextBlock Text="○ 辅助元素，用于常见的信息展示。" 
+                              FontSize="13"
+                              Margin="10 0 0 5"/>
+                   <TextBlock Text="代码演示"
+                              FontWeight="Black"
+                              FontSize="20"
+                              Margin="10 10 0 5"/>
+                   <!--#endregion-->
+                   <StackPanel>
+                         <Label Margin="10"
+                                Content="This is Default Label."/>
+                         <Label Style="{StaticResource AgileDesignPrimaryLabel}"
+                                Margin="10"
+                                Content="This is Primary Label."/>
+                         <Label Style="{StaticResource AgileDesignSuccessLabel}" 
+                                Margin="10"
+                                Content="This is Success Label."/>
+                         <Label Style="{StaticResource AgileDesignErrorLabel}" 
+                                Margin="10"
+                                Content="This is Error Label."/>
+                         <Label Style="{StaticResource AgileDesignWarningLabel}" 
+                                Margin="10"
+                                Content="This is Warning Label."/>
+                   </StackPanel>
+                   
+               </StackPanel>
+            </wpf:ScrollViewer>
         </GroupBox>
     </Grid>
 </UserControl>

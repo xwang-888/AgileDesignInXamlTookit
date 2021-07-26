@@ -64,8 +64,8 @@
                                    Style="{StaticResource AgileDesignErrorLabel}"
                                    Margin="10 0 0 3"/>
                             <!--#endregion-->
-                            <wpf:Card HorizontalAlignment="Center" 
-                        ShadowDepth="Depth4"
+                            <wpf:Card HorizontalAlignment="Left" 
+                        ShadowDepth="Depth3"
                         Foreground="Black"
                         CornerRadius="5"
                         Padding="10"
