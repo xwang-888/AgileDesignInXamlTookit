@@ -1,110 +1,121 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:assist="clr-namespace:AgileDesignThemes.Wpf.Themes.Assist"
-                    xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf">
-    <Style TargetType="TextBox" x:Key="TextBoxBaseStyle">
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="FontSize" Value="12"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Padding" Value="5 1 5 1"/>
-        <Setter Property="BorderBrush" Value="#C3D2DE"/>
-        <Setter Property="assist:ControlAssist.CornerRadius" Value="2"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-        <Setter Property="Height" Value="32"/>
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:assist="clr-namespace:AgileDesignThemes.Wpf.Themes.Assist"
+    xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf">
+    <Style x:Key="TextBoxBaseStyle" TargetType="TextBox">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="5,1,5,1" />
+        <Setter Property="BorderBrush" Value="#C3D2DE" />
+        <Setter Property="assist:ControlAssist.CornerRadius" Value="2" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Height" Value="32" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate  TargetType="TextBox">
-                    <Border BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            CornerRadius="{TemplateBinding assist:ControlAssist.CornerRadius}">
-                        <Grid >
-                            <Border Background="Transparent"
-                                BorderBrush="{DynamicResource PrimaryHueMidBrush}"
+                <ControlTemplate TargetType="TextBox">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding assist:ControlAssist.CornerRadius}">
+                        <Grid>
+                            <Border
                                 Name="BackBorder"
-                                Opacity="0"
                                 Margin="0"
+                                Background="Transparent"
+                                BorderBrush="{DynamicResource PrimaryHueMidBrush}"
                                 BorderThickness="3"
-                                CornerRadius="{TemplateBinding assist:ControlAssist.CornerRadius}"/>
-                          <Grid>
-                              <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
+                                CornerRadius="{TemplateBinding assist:ControlAssist.CornerRadius}"
+                                Opacity="0" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                              <!--Icon-->
-                                <wpf:Avatar
-                                    AvatarEffect="{x:Null}"
-                                    Background="Transparent"
+                                <!--  Icon  -->
+                                <wpf:PackIcon
+                                    x:Name="IconAvatar"
                                     Width="24"
                                     Height="24"
-                                    Opacity="0.8"
-                                    Margin="5 0 -4 0"
+                                    Margin="5,0,-4,0"
+                                    Padding="0"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
-                                    x:Name="IconAvatar"
-                                    Padding="0"
+                                    Background="Transparent"
                                     Foreground="{TemplateBinding Foreground}"
-                                    Data="{TemplateBinding assist:ControlAssist.IconGeometry}"
-                                />
-                              <ScrollViewer x:Name="PART_ContentHost"
-                                            Focusable="True"
-                                            Grid.Column="1"
-                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                            SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}"
-                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
-                              </ScrollViewer>
-                              <!--水印-->
-                              <TextBlock x:Name="Message"  Padding="{TemplateBinding Padding}" Visibility="Collapsed"
-                                         Text="{TemplateBinding assist:ControlAssist.HintText}" 
-                                         Grid.Column="1"
-                                         Foreground="{TemplateBinding Foreground}" IsHitTestVisible="False" 
-                                         Opacity="0.5"
-                                         FontSize="{TemplateBinding FontSize}"
-                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                         Margin="{TemplateBinding Padding}" />
+                                    Kind="{TemplateBinding assist:ControlAssist.Icon}"
+                                    Opacity="0.8" />
+                                <ScrollViewer
+                                    x:Name="PART_ContentHost"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    Focusable="True"
+                                    SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                                <!--  水印  -->
+                                <TextBlock
+                                    x:Name="Message"
+                                    Grid.Column="1"
+                                    Margin="{TemplateBinding Padding}"
+                                    Padding="{TemplateBinding Padding}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    IsHitTestVisible="False"
+                                    Opacity="0.5"
+                                    Text="{TemplateBinding assist:ControlAssist.HintText}"
+                                    Visibility="Collapsed" />
                             </Grid>
                         </Grid>
                     </Border>
-                        <ControlTemplate.Triggers>
-                            <!--显示水印-->
-                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="">
-                                <Setter TargetName="Message" Property="Visibility" Value="Visible" />
-                            </DataTrigger>
-                        <Trigger Property="Data" SourceName="IconAvatar" Value="{x:Null}">
-                            <Setter Property="Visibility" TargetName="IconAvatar" Value="Collapsed"/>
-                            </Trigger>
-                        <Trigger Property="IsFocused" Value="True" >
-                               <Trigger.EnterActions>
-                                   <BeginStoryboard>
-                                       <Storyboard>
-                                        <ThicknessAnimationUsingKeyFrames   Storyboard.TargetName="BackBorder"  Storyboard.TargetProperty="Margin" >
-                                            <EasingThicknessKeyFrame KeyTime="0:0:0.2" Value="-3"/>
+                    <ControlTemplate.Triggers>
+                        <!--  显示水印  -->
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="">
+                            <Setter TargetName="Message" Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                        <Trigger SourceName="IconAvatar" Property="Kind" Value="Abacus">
+                            <Setter TargetName="IconAvatar" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="BackBorder" Storyboard.TargetProperty="Margin">
+                                            <EasingThicknessKeyFrame KeyTime="0:0:0.2" Value="-3" />
                                         </ThicknessAnimationUsingKeyFrames>
-                                           <DoubleAnimation Storyboard.TargetName="BackBorder"  From="0" By="0.15" Duration="0:0:0.2"  Storyboard.TargetProperty="Opacity" />
-                                       </Storyboard>
-                                   </BeginStoryboard>
+                                        <DoubleAnimation
+                                            By="0.15"
+                                            Storyboard.TargetName="BackBorder"
+                                            Storyboard.TargetProperty="Opacity"
+                                            From="0"
+                                            Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
                             </Trigger.EnterActions>
-                                <Trigger.ExitActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames   Storyboard.TargetName="BackBorder"  Storyboard.TargetProperty="Opacity" >
-                                            <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="BackBorder" Storyboard.TargetProperty="Opacity">
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.ExitActions>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
                         </Trigger>
-                            <Trigger  Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}"/>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
                         </Trigger>
-                        </ControlTemplate.Triggers>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Opacity" Value=".4"/>
+                <Setter Property="Opacity" Value=".4" />
             </Trigger>
         </Style.Triggers>
     </Style>

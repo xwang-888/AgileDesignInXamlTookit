@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+
 using AgileDesignThemes.Wpf.Enums;
 
 namespace AgileDesignThemes.Wpf.Themes.Assist
@@ -35,15 +36,26 @@ namespace AgileDesignThemes.Wpf.Themes.Assist
 
 
 
+        public static readonly DependencyProperty IconProperty = DependencyProperty.RegisterAttached(
+            "Icon", typeof(PackIconKind), typeof(ControlAssist), new PropertyMetadata(default));
         public static readonly DependencyProperty IconGeometryProperty = DependencyProperty.RegisterAttached(
             "IconGeometry", typeof(string), typeof(ControlAssist), new PropertyMetadata(null));
-        public static string GetIconGeometry(DependencyObject element) => (string)element.GetValue(IconGeometryProperty);
         /// <summary>
         /// 设置控件的Icon图标
         /// </summary>
         /// <param name="element"></param>
         /// <param name="value"></param>
         public static void SetIconGeometry(DependencyObject element, string value) => element.SetValue(IconGeometryProperty, value);
+        public static string GetIconGeometry(DependencyObject element) => (string)element.GetValue(IconGeometryProperty);
+        /// <summary>
+        /// 设置控件的Icon图标
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="value"></param>
+        public static void SetIcon(DependencyObject element, PackIconKind value) => element.SetValue(IconProperty, value);
+
+
+        public static PackIconKind GetIcon(DependencyObject element) => (PackIconKind)element.GetValue(IconProperty);
 
         public static readonly DependencyProperty HintTextProperty = DependencyProperty.RegisterAttached(
             "HintText", typeof(string), typeof(ControlAssist), new PropertyMetadata(default(string)));
@@ -53,6 +65,31 @@ namespace AgileDesignThemes.Wpf.Themes.Assist
         /// </summary>
         public static void SetHintText(DependencyObject element, string value) => element.SetValue(HintTextProperty, value);
 
+        #region Header
+        public static readonly DependencyProperty HeaderHorizontalAlignmentProperty = DependencyProperty.RegisterAttached("HeaderHorizontalAlignment", typeof(HorizontalAlignment), typeof(ControlAssist), new PropertyMetadata(HorizontalAlignment.Left));
+
+        public static readonly DependencyProperty HeaderVerticalAlignmentProperty = DependencyProperty.RegisterAttached("HeaderVerticalAlignment", typeof(VerticalAlignment), typeof(ControlAssist), new PropertyMetadata(VerticalAlignment.Center));
+
+        /// <summary>
+        /// 设置Header的水平轴
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="value"></param>
+        public static void SetHeaderHorizontalAlignment(DependencyObject element, HorizontalAlignment value) =>
+            element.SetValue(HeaderHorizontalAlignmentProperty, value);
+        public static HorizontalAlignment GetHeaderHorizontalAlignment(DependencyObject element) =>
+            (HorizontalAlignment)element.GetValue(HeaderHorizontalAlignmentProperty);
+        /// <summary>
+        /// 设置Header的垂直轴
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="value"></param>
+        public static void SetHeaderVerticalAlignment(DependencyObject element, VerticalAlignment value) =>
+            element.SetValue(HeaderVerticalAlignmentProperty, value);
+        public static VerticalAlignment GetHeaderVerticalAlignment(DependencyObject element) =>
+            (VerticalAlignment)element.GetValue(HeaderHorizontalAlignmentProperty);
+        #endregion
+
     }
-   
+
 }
