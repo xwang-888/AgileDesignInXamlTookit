@@ -11,7 +11,7 @@
     d:DesignWidth="1200"
     mc:Ignorable="d">
     <Grid>
-        <GroupBox assist:ControlAssist.ShadowDepth="Depth4" BorderThickness="0">
+        <GroupBox assist:ControlAssist.ShadowDepth="Depth4" BorderThickness="0" assist:ControlAssist.HeaderHorizontalAlignment="Center">
             <GroupBox.Header>
                 <TextBlock Foreground="White" Text="Buttons" />
             </GroupBox.Header>

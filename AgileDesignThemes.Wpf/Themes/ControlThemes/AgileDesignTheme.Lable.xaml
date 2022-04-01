@@ -4,7 +4,7 @@
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Other.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style  x:Key="AgileDesignLabelBase" TargetType="Label">
-        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"/>
+        <Setter Property="Foreground" Value="{DynamicResource AgileDesignBody}"/>
         <Setter Property="MinHeight" Value="45"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -17,7 +17,8 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Rectangle Width="5"  Fill="{TemplateBinding Background}"/>
+                        <Border Width="3.5"  Background="{TemplateBinding Background}" CornerRadius="2.5 0 0 2.5">
+                        </Border>
                       <Border Opacity="0.2" Grid.Column="1" Background="{TemplateBinding Background}">
                       </Border>
                           <ContentPresenter Grid.Column="1"

@@ -21,6 +21,8 @@
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Slider.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.ComboBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgilDesignTheme.ToolTip.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgilDesignTheme.Window.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.TabControl.xaml" />
 
 
     </ResourceDictionary.MergedDictionaries>
@@ -49,13 +51,13 @@
         </Setter>
     </Style>
 
-    <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="{x:Type Button}" >
+    <Style BasedOn="{StaticResource ButtonBaseStyle}" TargetType="{x:Type Button}">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Opacity" Value=".7"/>
+                <Setter Property="Opacity" Value=".7" />
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Opacity" Value=".9"/>
+                <Setter Property="Opacity" Value=".9" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -63,10 +65,13 @@
     <Style BasedOn="{StaticResource ListBoxBaseStyle}" TargetType="{x:Type ListBox}" />
     <Style BasedOn="{StaticResource ProgressBarBaseStyle}" TargetType="{x:Type ProgressBar}" />
     <Style BasedOn="{StaticResource ToggleSwitchBaseStyle}" TargetType="{x:Type ToggleButton}" />
-    <Style BasedOn="{StaticResource GroupBoxBaseStyle}" TargetType="{x:Type GroupBox}"/>
-    <Style BasedOn="{StaticResource CheckBoxBaseStyle}" TargetType="{x:Type CheckBox}"/>
-    <Style BasedOn="{StaticResource ComboBoxBaseStyle}" TargetType="{x:Type ComboBox}"/>
-    <Style BasedOn="{StaticResource ToolTipBaseStyle}" TargetType="{x:Type ToolTip}"/>
+    <Style BasedOn="{StaticResource GroupBoxBaseStyle}" TargetType="{x:Type GroupBox}" />
+    <Style BasedOn="{StaticResource CheckBoxBaseStyle}" TargetType="{x:Type CheckBox}" />
+    <Style BasedOn="{StaticResource ComboBoxBaseStyle}" TargetType="{x:Type ComboBox}" />
+    <Style BasedOn="{StaticResource ToolTipBaseStyle}" TargetType="{x:Type ToolTip}" />
+    <Style  TargetType="{x:Type Label}" >
+        <Setter Property="Foreground" Value="{DynamicResource AgileDesignBody}"/>
+    </Style>
 
 
 </ResourceDictionary>

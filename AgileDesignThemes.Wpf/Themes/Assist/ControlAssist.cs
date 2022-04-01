@@ -66,7 +66,7 @@ namespace AgileDesignThemes.Wpf.Themes.Assist
         public static void SetHintText(DependencyObject element, string value) => element.SetValue(HintTextProperty, value);
 
         #region Header
-        public static readonly DependencyProperty HeaderHorizontalAlignmentProperty = DependencyProperty.RegisterAttached("HeaderHorizontalAlignment", typeof(HorizontalAlignment), typeof(ControlAssist), new PropertyMetadata(HorizontalAlignment.Left));
+        public static readonly DependencyProperty HeaderHorizontalAlignmentProperty = DependencyProperty.RegisterAttached("HeaderHorizontalAlignment", typeof(HorizontalAlignment), typeof(ControlAssist), new PropertyMetadata(HorizontalAlignment.Center));
 
         public static readonly DependencyProperty HeaderVerticalAlignmentProperty = DependencyProperty.RegisterAttached("HeaderVerticalAlignment", typeof(VerticalAlignment), typeof(ControlAssist), new PropertyMetadata(VerticalAlignment.Center));
 

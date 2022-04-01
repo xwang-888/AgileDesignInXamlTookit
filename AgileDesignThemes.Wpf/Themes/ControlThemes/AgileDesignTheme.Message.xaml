@@ -26,7 +26,7 @@
         <Setter Property="MinHeight" Value="32"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"/>
+        <Setter Property="Foreground" Value="{DynamicResource AgileDesignBody}"/>
         <Setter Property="Padding" Value="15 10"/>
         <Setter Property="Margin" Value="5 3"/>
         <Setter Property="Opacity" Value="0"/>

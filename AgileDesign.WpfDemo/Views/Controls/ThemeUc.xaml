@@ -6,9 +6,24 @@
              xmlns:local="clr-namespace:AgileDesign.WpfDemo.Views.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <WrapPanel>
-        <Button Click="CalendulaGoldButton_Click" Margin="3">CalendulaGold</Button>
-        <Button Click="CyanButton_Click" Margin="3">Cyan</Button>
-        <Button Click="SunriseYellowButton_Click" Margin="3">SunriseYellow</Button>
-    </WrapPanel>
+    <StackPanel>
+        <WrapPanel>
+            <TextBlock Text="颜色：" VerticalAlignment="Center" Margin="10"/>
+            <Button Click="CalendulaGoldButton_Click" Background="#faad14" Margin="3">CalendulaGold</Button>
+            <Button Click="CyanButton_Click" Margin="3" Background="#13c2c2">Cyan</Button>
+            <Button Click="SunriseYellowButton_Click" Background="#fadb14" Margin="3">SunriseYellow</Button>
+            <Button Click="LimeButton_Click"  Background="#a0d911" Margin="3">Lime</Button>
+            <Button Click="SunsetOrangeButton_Click" Margin="3" Background="#fa8c16">SunsetOrange</Button>
+            <Button Click="VolcanoButton_Click" Margin="3" Background="#fa541c">Volcano</Button>
+            <Button Click="DustRedButton_Click" Margin="3" Background="#f5222d">DustRed</Button>
+            <Button Click="DaybreakBlueButton_Click" Margin="3" Background="#1890ff">DaybreakBlue</Button>
+        </WrapPanel>
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock Text="主题：" VerticalAlignment="Center"/>
+            <TextBlock Text="Light" VerticalAlignment="Center"/>
+            <ToggleButton IsChecked="True"  Click="ButtonBase_OnClick"/>
+            <TextBlock Text="Dark" VerticalAlignment="Center"/>
+        </StackPanel>
+    </StackPanel>
+    
 </UserControl>

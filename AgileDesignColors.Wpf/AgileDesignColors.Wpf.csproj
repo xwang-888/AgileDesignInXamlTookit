@@ -6,18 +6,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Page Remove="Themes\Colors\AgileDesignColor.DustRed.Primary.xaml" />
 		<Page Remove="Themes\Recommended\AgileDesignColor.DustRed.xaml" />
-		<Page Remove="Themes\Recommended\State\AgileDesignTheme.Dark.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Include="Themes\Colors\AgileDesignColor.DustRed.Primary.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</None>
-		<None Include="Themes\Recommended\State\AgileDesignTheme.Dark.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</None>
 	</ItemGroup>
 
 	<ItemGroup>

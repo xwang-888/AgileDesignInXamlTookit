@@ -44,7 +44,7 @@ namespace AgileDesign.WpfDemo.Configuration
                 new(){Header = "Drwaer",Icon = "Style",Content = new DrawerUc()},
                 new(){Header = "ListBox",Icon = "ViewList",Content = null},
                 new(){Header = "DataGrid",Icon = "TableLarge",Content = null},
-                new(){Header = "TableControl",Icon = "Table",Content =null},
+                new(){Header = "TabControl",Icon = "Table",Content =new TabControlUC()},
                 new(){Header = "TreeView",Icon = "FileTree",Content = null},
             };
         }

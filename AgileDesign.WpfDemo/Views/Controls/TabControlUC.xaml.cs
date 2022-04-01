@@ -12,23 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AgileDesign.WpfDemo.ViewModels;
-using AgileDesignColors.Wpf;
-using AgileDesignThemes.Wpf;
 
-namespace AgileDesign.WpfDemo
+namespace AgileDesign.WpfDemo.Views.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// TabControlUC.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : CustomWindow
+    public partial class TabControlUC : UserControl
     {
-        public MainWindow()
+        public TabControlUC()
         {
             InitializeComponent();
-            this.DataContext = new MainViewModel();
         }
-
-      
     }
 }

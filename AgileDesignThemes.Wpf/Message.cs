@@ -61,25 +61,35 @@ namespace AgileDesignThemes.Wpf
         private static readonly ResourceDictionary ResourceDictionary = new() { Source = new Uri("pack://application:,,,/AgileDesignThemes.Wpf;component/Themes/ControlThemes/AgileDesignTheme.Message.xaml", UriKind.Absolute) };
         public async void Close()
         {
-            await Task.Delay(new TimeSpan(0, 0, 0, Seconds));
+            try
+            {
+                await Task.Delay(new TimeSpan(0, 0, 0, Seconds));
 
-            //var opacityAnimation = new DoubleAnimation(1, 0.5, new Duration(new TimeSpan(3000)));
-            //var scaleAnimation = new DoubleAnimation(1, 0.5, new Duration(new TimeSpan(3000)));
+                //var opacityAnimation = new DoubleAnimation(1, 0.5, new Duration(new TimeSpan(3000)));
+                //var scaleAnimation = new DoubleAnimation(1, 0.5, new Duration(new TimeSpan(3000)));
 
-            //ScaleTransform scale = new ScaleTransform();
-            //this.RenderTransform = scale;
-            //var clock = scaleAnimation.CreateClock();
-            //clock.Completed += (obj, args) =>
-            //{
-            //    //MessagePanel?.Children.Remove(this);
+                //ScaleTransform scale = new ScaleTransform();
+                //this.RenderTransform = scale;
+                //var clock = scaleAnimation.CreateClock();
+                //clock.Completed += (obj, args) =>
+                //{
+                //    //MessagePanel?.Children.Remove(this);
 
-            //};
-            //this.BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
-            //scale.ApplyAnimationClock(ScaleTransform.ScaleYProperty, clock);
-            var storyboard = (Storyboard)ResourceDictionary["MsgClose"];
-            storyboard?.Begin(this);
-            await Task.Delay(300);
-            MessagePanel?.Children.Remove(this);
+                //};
+                //this.BeginAnimation(UIElement.OpacityProperty, opacityAnimation);
+                //scale.ApplyAnimationClock(ScaleTransform.ScaleYProperty, clock);
+                var storyboard = (Storyboard)ResourceDictionary["MsgClose"];
+                storyboard?.Begin(this);
+                await Task.Delay(300);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            finally
+            {
+                MessagePanel?.Children.Remove(this);
+            }
         }
 
 

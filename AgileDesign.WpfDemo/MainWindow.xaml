@@ -1,4 +1,4 @@
-﻿<Window
+﻿<wpf:CustomWindow
     x:Class="AgileDesign.WpfDemo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -9,9 +9,11 @@
     xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf;assembly=AgileDesignThemes.Wpf"
     xmlns:controls="clr-namespace:AgileDesignThemes.Wpf.Controls;assembly=AgileDesignThemes.Wpf"
     Title="AgileDesignDemo"
+    FitSystemWindow="False"
     TextElement.Foreground="{DynamicResource AgileDesignBody}"
     Background="{DynamicResource AgileDesignPaper}"
     WindowStartupLocation="CenterScreen"
+    Style="{StaticResource BaseWindowsStyle}"
     Width="1210"
     Height="600"
     mc:Ignorable="d">
@@ -70,4 +72,4 @@
                         Margin="20"/>
 
         </Grid>
-</Window>
+</wpf:CustomWindow>
