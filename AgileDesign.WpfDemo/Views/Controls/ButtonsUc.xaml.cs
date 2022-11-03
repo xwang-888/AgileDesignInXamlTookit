@@ -27,19 +27,6 @@ namespace AgileDesign.WpfDemo.Views.Controls
             InitializeComponent();
             this.DataContext = new ButtonsUcViewModel();
         }
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            AppColors.Instance.PrimaryColors = PrimaryColors.CalendulaGold;
-        }
-
-        private void ButtonBase_OnClick2(object sender, RoutedEventArgs e)
-        {
-            AppColors.Instance.PrimaryColors = PrimaryColors.Cyan;
-        }
-
-        private void ButtonBase2_OnClick(object sender, RoutedEventArgs e)
-        {
-            AppColors.Instance.PrimaryColors = PrimaryColors.DaybreakBlue;
-        }
+    
     }
 }

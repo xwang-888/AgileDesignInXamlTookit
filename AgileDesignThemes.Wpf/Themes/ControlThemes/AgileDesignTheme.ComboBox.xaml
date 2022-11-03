@@ -322,7 +322,7 @@
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
         <Setter Property="TextElement.FontSize" Value="13" />
-        <Setter Property="Background" Value="{DynamicResource  AgileDesignBackground}"/>
+        <Setter Property="Background" Value="{DynamicResource  AgileDesignPaper}"/>
         <Setter Property="Foreground" Value="{DynamicResource  AgileDesignBody}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource  AgileDesignTextBoxBorder}"/>
         <Setter Property="Padding" Value="5, 3, 25, 3"/>
