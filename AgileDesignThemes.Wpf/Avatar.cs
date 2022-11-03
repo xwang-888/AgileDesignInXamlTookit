@@ -11,6 +11,7 @@ namespace AgileDesignThemes.Wpf
         {
             BlurRadius = 8, ShadowDepth = 1.5, Direction = 270, Color = Color.FromArgb(0xaa, 0, 0, 0), Opacity = .42,
             RenderingBias = RenderingBias.Performance
+            
         };
 
         public static readonly DependencyProperty AvatarEffectProperty = DependencyProperty.Register(
