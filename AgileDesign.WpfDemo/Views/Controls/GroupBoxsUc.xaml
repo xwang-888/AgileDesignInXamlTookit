@@ -20,7 +20,15 @@
                 <GroupBox
                     Width="300"
                     Height="300"
-                    Header="Default GroupBox" />
+                    Header="Default GroupBox">
+                    <StackPanel>
+                        <Label
+                            Margin="0,3"
+                            Content="Default GroupBox Style"
+                            Style="{StaticResource AgileDesignSuccessLabel}" />
+                        <Label Content="GroupBoxHeader = Center" Style="{StaticResource AgileDesignPrimaryLabel}" />
+                    </StackPanel>
+                </GroupBox>
                 <GroupBox
                     Width="300"
                     Height="300"
@@ -31,13 +39,10 @@
                     Header="Shadow GroupBox">
                     <StackPanel>
                         <Label
+                            Margin="0,3"
                             Content="GroupBoxShadowDepth = Depth3"
-                            Foreground="Black"
                             Style="{StaticResource AgileDesignSuccessLabel}" />
-                        <Label
-                            Content="GroupBoxHeader = Center"
-                            Foreground="Black"
-                            Style="{StaticResource AgileDesignPrimaryLabel}" />
+                        <Label Content="GroupBoxHeader = Center" Style="{StaticResource AgileDesignPrimaryLabel}" />
                     </StackPanel>
                 </GroupBox>
             </StackPanel>

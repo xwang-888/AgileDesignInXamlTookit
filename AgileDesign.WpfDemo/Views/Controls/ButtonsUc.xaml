@@ -11,7 +11,10 @@
     d:DesignWidth="1200"
     mc:Ignorable="d">
     <Grid>
-        <GroupBox assist:ControlAssist.ShadowDepth="Depth4" BorderThickness="0" assist:ControlAssist.HeaderHorizontalAlignment="Center">
+        <GroupBox
+            assist:ControlAssist.HeaderHorizontalAlignment="Center"
+            assist:ControlAssist.ShadowDepth="Depth4"
+            BorderThickness="0">
             <GroupBox.Header>
                 <TextBlock Foreground="White" Text="Buttons" />
             </GroupBox.Header>
@@ -44,15 +47,13 @@
                         FontSize="15"
                         Style="{StaticResource AgileDesignPrimaryLabel}" />
                     <WrapPanel>
-                        <Button Click="ButtonBase2_OnClick" Content="Primary Button" />
+                        <Button Content="Primary Button" />
                         <Button
                             Margin="20,0,0,0"
-                            Click="ButtonBase_OnClick"
                             Content="Empty Button"
                             Style="{StaticResource AgileDesignDefaultButton}" />
                         <Button
                             Margin="20,0,0,0"
-                            Click="ButtonBase_OnClick2"
                             Content="Link Button"
                             Style="{StaticResource AgileDesignLinkButton}" />
                         <Button

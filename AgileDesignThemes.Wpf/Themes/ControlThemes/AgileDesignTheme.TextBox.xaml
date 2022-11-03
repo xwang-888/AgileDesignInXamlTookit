@@ -9,7 +9,7 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding" Value="5,1,5,1" />
         <Setter Property="BorderBrush" Value="#C3D2DE" />
-        <Setter Property="Background" Value="{DynamicResource AgileDesignBackground}" />
+        <Setter Property="Background" Value="{DynamicResource AgileDesignPaper}" />
         <Setter Property="Foreground" Value="{DynamicResource AgileDesignBody}" />
         <Setter Property="assist:ControlAssist.CornerRadius" Value="2" />
         <Setter Property="VerticalContentAlignment" Value="Center" />

@@ -1,29 +1,77 @@
-﻿<UserControl x:Class="AgileDesign.WpfDemo.Views.Controls.ThemeUc"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:AgileDesign.WpfDemo.Views.Controls"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+﻿<UserControl
+    x:Class="AgileDesign.WpfDemo.Views.Controls.ThemeUc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AgileDesign.WpfDemo.Views.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
     <StackPanel>
         <WrapPanel>
-            <TextBlock Text="颜色：" VerticalAlignment="Center" Margin="10"/>
-            <Button Click="CalendulaGoldButton_Click" Background="#faad14" Margin="3">CalendulaGold</Button>
-            <Button Click="CyanButton_Click" Margin="3" Background="#13c2c2">Cyan</Button>
-            <Button Click="SunriseYellowButton_Click" Background="#fadb14" Margin="3">SunriseYellow</Button>
-            <Button Click="LimeButton_Click"  Background="#a0d911" Margin="3">Lime</Button>
-            <Button Click="SunsetOrangeButton_Click" Margin="3" Background="#fa8c16">SunsetOrange</Button>
-            <Button Click="VolcanoButton_Click" Margin="3" Background="#fa541c">Volcano</Button>
-            <Button Click="DustRedButton_Click" Margin="3" Background="#f5222d">DustRed</Button>
-            <Button Click="DaybreakBlueButton_Click" Margin="3" Background="#1890ff">DaybreakBlue</Button>
+            <TextBlock
+                Margin="10"
+                VerticalAlignment="Center"
+                Text="颜色：" />
+            <Button
+                Margin="3"
+                Background="#faad14"
+                Click="CalendulaGoldButton_Click">
+                CalendulaGold
+            </Button>
+            <Button
+                Margin="3"
+                Background="#13c2c2"
+                Click="CyanButton_Click">
+                Cyan
+            </Button>
+            <Button
+                Margin="3"
+                Background="#fadb14"
+                Click="SunriseYellowButton_Click">
+                SunriseYellow
+            </Button>
+            <Button
+                Margin="3"
+                Background="#a0d911"
+                Click="LimeButton_Click">
+                Lime
+            </Button>
+            <Button
+                Margin="3"
+                Background="#fa8c16"
+                Click="SunsetOrangeButton_Click">
+                SunsetOrange
+            </Button>
+            <Button
+                Margin="3"
+                Background="#fa541c"
+                Click="VolcanoButton_Click">
+                Volcano
+            </Button>
+            <Button
+                Margin="3"
+                Background="#f5222d"
+                Click="DustRedButton_Click">
+                DustRed
+            </Button>
+            <Button
+                Margin="3"
+                Background="#1890ff"
+                Click="DaybreakBlueButton_Click">
+                DaybreakBlue
+            </Button>
         </WrapPanel>
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <TextBlock Text="主题：" VerticalAlignment="Center"/>
-            <TextBlock Text="Light" VerticalAlignment="Center"/>
-            <ToggleButton IsChecked="True"  Click="ButtonBase_OnClick"/>
-            <TextBlock Text="Dark" VerticalAlignment="Center"/>
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center" Text="主题：" />
+            <TextBlock VerticalAlignment="Center" Text="Light" />
+            <ToggleButton
+                Margin="10,0"
+                Click="ButtonBase_OnClick"
+                IsChecked="True" />
+            <TextBlock VerticalAlignment="Center" Text="Dark" />
         </StackPanel>
     </StackPanel>
-    
+
 </UserControl>
