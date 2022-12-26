@@ -69,8 +69,8 @@
     <Style BasedOn="{StaticResource CheckBoxBaseStyle}" TargetType="{x:Type CheckBox}" />
     <Style BasedOn="{StaticResource ComboBoxBaseStyle}" TargetType="{x:Type ComboBox}" />
     <Style BasedOn="{StaticResource ToolTipBaseStyle}" TargetType="{x:Type ToolTip}" />
-    <Style  TargetType="{x:Type Label}" >
-        <Setter Property="Foreground" Value="{DynamicResource AgileDesignBody}"/>
+    <Style TargetType="{x:Type Label}">
+        <Setter Property="Foreground" Value="{DynamicResource AgileDesignBody}" />
     </Style>
 
 

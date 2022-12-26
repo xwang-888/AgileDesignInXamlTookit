@@ -1,7 +1,8 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="clr-namespace:AgileDesignThemes.Wpf.Controls"
-                    xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:AgileDesignThemes.Wpf.Controls"
+    xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf">
     <Style x:Key="ScrollBarBaseRepeatButton" TargetType="RepeatButton">
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Background" Value="Transparent" />

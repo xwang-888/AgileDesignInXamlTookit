@@ -1,8 +1,10 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:panels="clr-namespace:AgileDesignThemes.Wpf.Panels"
-                    xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf"
-                    xmlns:system="clr-namespace:System;assembly=mscorlib">
-    <Style TargetType="ListBoxItem" x:Key="ListBoxItemMenuStyle">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:panels="clr-namespace:AgileDesignThemes.Wpf.Panels"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:wpf="clr-namespace:AgileDesignThemes.Wpf">
+    <Style x:Key="ListBoxItemMenuStyle" TargetType="ListBoxItem">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Padding" Value="10,0" />
         <Setter Property="MinHeight" Value="32" />
@@ -11,24 +13,24 @@
         <Setter Property="Background" Value="{DynamicResource AgileDesignBackground}" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Template" >
+        <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBoxItem">
                     <Grid>
                         <Border x:Name="bg" Background="Transparent" />
                         <Border
-                                            x:Name="line"
-                                            Width="4"
-                                            HorizontalAlignment="Left"
-                                            Background="{DynamicResource PrimaryHueMidBrush }"
-                                            Opacity="0" />
+                            x:Name="line"
+                            Width="4"
+                            HorizontalAlignment="Left"
+                            Background="{DynamicResource PrimaryHueMidBrush}"
+                            Opacity="0" />
                         <ContentPresenter
-                                            x:Name="dataContent"
-                                            Margin="{TemplateBinding Padding}"
-                                            HorizontalAlignment="Left"
-                                            VerticalAlignment="Center"
-                                            IsHitTestVisible="True"
-                                            Opacity="0.7" />
+                            x:Name="dataContent"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            IsHitTestVisible="True"
+                            Opacity="0.7" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
@@ -38,10 +40,10 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation
-                                                            Storyboard.TargetName="line"
-                                                            Storyboard.TargetProperty="Opacity"
-                                                            To="1"
-                                                            Duration="0:0:0.3" />
+                                            Storyboard.TargetName="line"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0:0:0.3" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
@@ -49,10 +51,10 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation
-                                                            Storyboard.TargetName="line"
-                                                            Storyboard.TargetProperty="Opacity"
-                                                            To="0"
-                                                            Duration="0:0:0.3" />
+                                            Storyboard.TargetName="line"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.3" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
@@ -69,27 +71,30 @@
         </Setter>
     </Style>
     <Style x:Key="ListBoxBaseStyle" TargetType="ListBox">
-        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBox">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                        <ScrollViewer  Padding="{TemplateBinding Control.Padding}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <ScrollViewer Padding="{TemplateBinding Control.Padding}">
                             <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
                         </ScrollViewer>
                     </Border>
-                <ControlTemplate.Triggers>
-                    <Trigger Property="ItemsControl.IsGrouping">
-                        <Setter Property="ScrollViewer.CanContentScroll">
-                            <Setter.Value>
-                                <system:Boolean>False</system:Boolean>
-                            </Setter.Value>
-                        </Setter>
-                        <Trigger.Value>
-                            <system:Boolean>True</system:Boolean>
-                        </Trigger.Value>
-                    </Trigger>
-                </ControlTemplate.Triggers>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ItemsControl.IsGrouping">
+                            <Setter Property="ScrollViewer.CanContentScroll">
+                                <Setter.Value>
+                                    <system:Boolean>False</system:Boolean>
+                                </Setter.Value>
+                            </Setter>
+                            <Trigger.Value>
+                                <system:Boolean>True</system:Boolean>
+                            </Trigger.Value>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

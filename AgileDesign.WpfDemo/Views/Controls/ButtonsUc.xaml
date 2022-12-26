@@ -89,12 +89,10 @@
                         <WrapPanel>
                             <Button
                                 assist:ControlAssist.CornerRadius="15"
-                                Click="ButtonBase2_OnClick"
                                 Content="Primary Button" />
                             <Button
                                 Margin="20,0,0,0"
                                 assist:ControlAssist.CornerRadius="15"
-                                Click="ButtonBase_OnClick"
                                 Content="Empty Button"
                                 Style="{StaticResource AgileDesignDefaultButton}" />
                             <Button
@@ -107,19 +105,16 @@
                             <Button
                                 Margin="0,0,0,0"
                                 assist:ControlAssist.Icon="Account"
-                                Click="ButtonBase_OnClick2"
                                 Content="Icon Button" />
                             <Button
                                 Width="32"
                                 Margin="20,0,0,0"
                                 Padding="0"
-                                assist:ControlAssist.CornerRadius="50"
-                                Click="ButtonBase_OnClick2">
+                                assist:ControlAssist.CornerRadius="50">
                                 <wpf:PackIcon VerticalAlignment="Center" Kind="AccountEdit" />
                             </Button>
                             <Button
                                 Margin="20,0,0,0"
-                                Click="ButtonBase_OnClick2"
                                 Style="{StaticResource AgileDesignDefaultButton}">
                                 <StackPanel Orientation="Horizontal">
                                     <wpf:PackIcon VerticalAlignment="Center" Kind="Account" />
@@ -131,7 +126,6 @@
                                 Margin="20,0,0,0"
                                 Padding="0"
                                 assist:ControlAssist.CornerRadius="50"
-                                Click="ButtonBase_OnClick2"
                                 Style="{StaticResource AgileDesignDefaultButton}">
                                 <wpf:PackIcon VerticalAlignment="Center" Kind="AccountEdit" />
                             </Button>
@@ -146,19 +140,16 @@
                         <Button
                             assist:ButtonProgressAssist.IsIndeterminate="True"
                             assist:ButtonProgressAssist.IsIndicatorVisible="True"
-                            Click="ButtonBase_OnClick2"
                             Content="Loading Button" />
                         <Button
                             Margin="20,0,0,0"
                             assist:ButtonProgressAssist.IsIndeterminate="True"
                             assist:ButtonProgressAssist.IsIndicatorVisible="{Binding IsIndicator}"
-                            Command="{Binding LoadingBtnCommand}"
-                            Content="Click Me" />
+                            Command="{Binding LoadingBtnCommand}" />
                         <Button
                             Margin="20,0,0,0"
                             assist:ButtonProgressAssist.IsIndicatorVisible="True"
                             assist:ButtonProgressAssist.Value="{Binding ElementName=SliderProgress, Path=Value}"
-                            Click="ButtonBase_OnClick2"
                             Content="Progress Button" />
                         <Slider
                             Name="SliderProgress"

@@ -31,8 +31,7 @@
                             <Border
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}">
-                            </Border>
+                                BorderThickness="{TemplateBinding BorderThickness}" />
                             <Border Width="{TemplateBinding OpenPanelWidth}" Background="Transparent">
                                 <ContentPresenter />
                             </Border>

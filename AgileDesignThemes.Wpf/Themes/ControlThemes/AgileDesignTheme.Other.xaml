@@ -1,9 +1,8 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="InfoColor" Color="#1890FF"></SolidColorBrush>
-    <SolidColorBrush x:Key="WarningColor" Color="#FAAD14"></SolidColorBrush>
-    <SolidColorBrush x:Key="ErrorColor" Color="#FF0000"></SolidColorBrush>
-    <SolidColorBrush x:Key="SuccessColor" Color="#52C41A"></SolidColorBrush>
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="InfoColor" Color="#1890FF" />
+    <SolidColorBrush x:Key="WarningColor" Color="#FAAD14" />
+    <SolidColorBrush x:Key="ErrorColor" Color="#FF0000" />
+    <SolidColorBrush x:Key="SuccessColor" Color="#52C41A" />
     <GeometryGroup x:Key="InfoGeometry">
         <Geometry>
             M512 512m-448 0a448 448 0 1 0 896 0 448 448 0 1 0-896 0Z
